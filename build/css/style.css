@@ -350,13 +350,19 @@ a {
           clip-path: inset(100%); }
 
 .container {
-  max-width: 1170px;
+  max-width: 1190px;
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px; }
+  @media only screen and (min-width: 1381px) and (max-width: 1839px) {
+    .container {
+      max-width: 1420px; } }
+  @media only screen and (min-width: 1840px) {
+    .container {
+      max-width: 1880px; } }
 
 .body {
-  min-width: 1170px;
+  min-width: 1190px;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -374,38 +380,42 @@ a {
       -ms-flex-align: center;
           align-items: center;
   min-height: 80px;
+  margin-bottom: 40px;
   padding-top: 10px;
-  margin-bottom: 20px; }
-
-.header__logo {
-  margin-right: 20px;
-  max-width: 155px;
-  height: auto; }
+  padding-left: 210px; }
 
 .header__heading {
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  text-align: center;
-  color: #55505e;
-  font-style: normal;
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+  font-weight: 900;
   font-size: 30px;
   line-height: 42px;
-  font-weight: 700;
-  vertical-align: bottom; }
+  vertical-align: bottom;
+  text-align: center;
+  color: #55505e;
+  text-transform: uppercase;
+  font-style: normal;
+  letter-spacing: 1px; }
 
 .aside {
   position: fixed;
-  width: 210px; }
+  top: 10px;
+  width: 210px;
+  margin-right: 20px; }
+
+.aside__logo {
+  max-width: 155px;
+  height: auto;
+  margin-bottom: 30px; }
 
 .branch {
   margin: 0;
-  padding: 0;
-  margin-bottom: 40px;
-  margin-top: 20px; }
+  margin-bottom: 30px;
+  padding: 0; }
 
 .branch__list {
   margin: 0;
@@ -414,43 +424,60 @@ a {
 
 .branch__item {
   margin: 0;
-  padding: 0;
-  margin-bottom: 10px; }
-
-.departments__title {
-  margin: 0;
+  margin-bottom: 5px;
   padding: 0;
   font-size: 16px;
   line-height: 20px;
+  color: #36346c; }
+
+.branch__item--active {
   font-weight: 700;
-  margin-bottom: 20px; }
+  color: #8a6267; }
+
+.departments__title {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px; }
 
 .departments__list {
-  list-style: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  list-style: none; }
 
 .departments__item {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px; }
 
 .employees {
-  padding-left: 210px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
   -ms-flex-negative: 0;
-      flex-shrink: 0; }
+      flex-shrink: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 230px; }
 
 .employees__title {
-  width: 100%; }
+  width: 100%;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  text-align: center; }
 
 .department {
-  width: 100%; }
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0; }
 
 .employees__list {
   display: -webkit-box;
@@ -458,8 +485,46 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
   list-style: none; }
 
 .person {
   width: 210px;
-  margin-right: 10px; }
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #f9ebdd;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #8a6267;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 2px 1px 0 #94919c;
+          box-shadow: 1px 2px 1px 0 #94919c;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .person:hover {
+    background-color: #cbc7c8; }
+
+.person__photo {
+  width: 210px;
+  height: 280px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #36346c;
+  border-radius: 5px; }
+
+.person__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  padding: 5px; }
