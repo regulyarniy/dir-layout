@@ -14,9 +14,11 @@ var build = 'build/';
 var cssDirSrc = src + 'css/';
 var jsDirSrc = src + 'js/';
 var imgDirSrc = src + 'img/';
+var fontsDirSrc = src + 'fonts/';
 var cssDirBuild = build + 'css/';
 var jsDirBuild = build + 'js/';
 var imgDirBuild = build + 'img/';
+var fontsDirBuild = build + 'fonts/';
 
 gulp.task('watch', ['browserSync', 'build'], function() {
   gulp.watch(cssDirSrc + '*.scss', ['postCSS']);
@@ -35,7 +37,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('copy', function() {
-  runSequence('copyHTML', 'copyImages', browserSync.reload);
+  runSequence('copyHTML', 'copyImages', 'copyFonts', browserSync.reload);
 });
 
 gulp.task('copyHTML', function() {
@@ -46,6 +48,11 @@ gulp.task('copyHTML', function() {
 gulp.task('copyImages', function() {
   return gulp.src(imgDirSrc + '**/*')
     .pipe(gulp.dest(imgDirBuild));
+})
+
+gulp.task('copyFonts', function() {
+  return gulp.src(fontsDirSrc + '**/*')
+    .pipe(gulp.dest(fontsDirBuild));
 })
 
 gulp.task('browserSync', function() {
