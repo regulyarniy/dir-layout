@@ -69,27 +69,39 @@ $color3: #f9ebdd;
 $color4: #cbc7c8;
 $color5: #94919c;
 $color6: #8a6267;
+$color7: #7a110d;
 
 // Breakpoints
 // =========================================================================
 
-$small: 1150px;
-$medium: 1380px;
-$large: 1840px;
+$breakpoint1: 1190px;
+$breakpoint2: 1420px;
+$breakpoint3: 1650px;
+$breakpoint4: 1880px;
 
 @mixin respond-to($media) {
-  @if $media == small-screens {
-    @media only screen and (min-width: $small) {
+  @if $media == break0 {
+    @media only screen and (max-width: $breakpoint1) {
       @content;
     }
   }
-  @else if $media == medium-screens {
-    @media only screen and (min-width: $medium + 1) and (max-width: $large - 1) {
+  @else if $media == break1 {
+    @media only screen and (min-width: $breakpoint1 + 1) and (max-width: $breakpoint2 - 1) {
       @content;
     }
   }
-  @else if $media == wide-screens {
-    @media only screen and (min-width: $large) {
+  @else if $media == break2 {
+    @media only screen and (min-width: $breakpoint2 + 1) and (max-width: $breakpoint3 - 1) {
+      @content;
+    }
+  }
+  @else if $media == break3 {
+    @media only screen and (min-width: $breakpoint3 + 1) and (max-width: $breakpoint4 - 1) {
+      @content;
+    }
+  }
+  @else if $media == break4 {
+    @media only screen and (min-width: $breakpoint4) {
       @content;
     }
   }
@@ -116,18 +128,22 @@ $large: 1840px;
 }
 
 .container {
-  max-width: $small + 40px;
+  max-width: $breakpoint1;
   margin: 0 auto;
   padding-right: 20px;
-  padding-left: 20px;@include respond-to (medium-screens) {
-    max-width: $medium + 40px;
-  };@include respond-to (wide-screens) {
-    max-width: $large + 40px;
+  padding-left: 20px;@include respond-to (break2) {
+    max-width: $breakpoint2;
+  };@include respond-to (break3) {
+    max-width: $breakpoint3;
+  };@include respond-to (break4) {
+    max-width: $breakpoint4;
+  };@include respond-to (break4) {
+    max-width: $breakpoint4;
   };
 }
 
 .body {
-  min-width: $small + 40px;
+  min-width: $breakpoint1;
 
   font-weight: 400;
   font-size: 16px;
@@ -147,8 +163,10 @@ $large: 1840px;
   align-items: center;
   min-height: 80px;
   margin-bottom: 40px;
-  padding-top: 10px;
-  padding-left: 210px;
+  margin-left: 230px;
+  padding-top: 10px;@include respond-to (break4) {
+    margin-left: 460px;
+  };
 }
 
 .header__heading {
@@ -180,7 +198,9 @@ $large: 1840px;
   top: 10px;
 
   width: 210px;
-  margin-right: 20px;
+  margin-right: 20px;@include respond-to (break4) {
+    width: 460px;
+  };
 }
 
 .aside__logo {
@@ -239,14 +259,29 @@ $large: 1840px;
   padding: 0;
 
   list-style: none;
+
+  border-left: 2px solid $color2;
 }
 
 .departments__item {
   margin-bottom: 10px;
+  padding-left: 10px;
 
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+
+  border-left: 2px solid trasparent;
+}
+
+.departments__item--active {
+  color: $color2;
+
+  border-left: 4px solid $color7;
+}
+
+.departments__item--active a {
+  border-bottom: 1px solid $color2;
 }
 
 // Employees
@@ -257,7 +292,9 @@ $large: 1840px;
   flex-grow: 0;
   flex-shrink: 0;
   flex-wrap: wrap;
-  margin-left: 230px;
+  margin-left: 230px;@include respond-to (break4) {
+    margin-left: 460px;
+  };
 }
 
 .employees__title {
@@ -321,8 +358,48 @@ $large: 1840px;
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
   padding: 5px;
+}
+
+.person__surname {
+  width: 100%;
+  margin-top: 10px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: $color2;
+}
+
+.person__name {
+  width: 100%;
+  margin-bottom: 10px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color2;
+}
+
+.person__post {
+  width: 100%;
+  margin-bottom: 20px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color7;
+}
+
+.person__info-line {
+  width: 100%;
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  line-height: 14px;
+  color: $color1;
 }
