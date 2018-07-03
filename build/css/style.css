@@ -378,7 +378,8 @@ a {
   line-height: 20px;
   font-family: "Merriweather", Georgia, serif;
   color: #55505e;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  scroll-behavior: smooth; }
 
 .header {
   display: -webkit-box;
@@ -459,6 +460,9 @@ a {
   border-left: 4px solid #7a110d; }
   .branch__item--active a {
     color: #8a6267; }
+
+.search-highlight {
+  outline: 1px solid red; }
 
 .departments__title {
   margin: 0;

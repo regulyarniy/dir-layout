@@ -33,8 +33,19 @@
           </ul>
         </nav>
 
+        <section class="search">
+          Поиск отдела:
+          <form id="searchDepartment" action="javascript:search('searchDepartment','department');">
+            <input class="search__input" type="text" placeholder="Начните вводить текст..">
+          </form>
+          Поиск сотрудника:
+          <form id="searchPerson" action="javascript:search('searchPerson','person');">
+            <input class="search__input" type="text" placeholder="Начните вводить текст..">
+          </form>
+        </section>
+
         <section class="departments">
-          <h2 class="departments__title">Переход к отделу:</h2>
+          <h2 class="departments__title">Поиск:</h2>
           <ul class="departments__list">
             <li class="departments__item departments__item--active">
               <a href="#">Отдел 1</a>
@@ -526,7 +537,7 @@
           <li class="person person--highlight">
             <img class="person__photo" src="img/person.jpg" alt="Иванов Иван Иванович" width="210" height="280">
             <p class="person__info">
-              <a class="person__surname" href="#">Иванов</a>
+              <a class="person__surname" href="#">Петров</a>
               <a class="person__name" href="#">Иван Иванович</a>
               <span class="person__post">Директор</span>
               <span class="person__info-line">

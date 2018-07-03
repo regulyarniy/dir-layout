@@ -161,6 +161,8 @@ a {
   color: $color1;
 
   background-color: $white;
+
+  scroll-behavior: smooth;
 }
 
 // Header
@@ -259,6 +261,13 @@ a {
   & a {
     color: $color6;
   }
+}
+
+// Search
+// =========================================================================
+
+.search-highlight {
+  outline: 1px solid red;
 }
 
 // Departments list
@@ -373,7 +382,6 @@ a {
   box-shadow: 1px 2px 1px 3px rgba($color5, 0.2);
 
   transition: all 0.3s ease-in-out;
-
   &--highlight {
     background-color: $color8;
   }
