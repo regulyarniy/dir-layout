@@ -28,30 +28,6 @@
   src: url("../fonts/subset-Merriweather-Black.woff2") format("woff2"), url("../fonts/subset-Merriweather-Black.woff") format("woff");
 }
 
-// Global styles
-// =========================================================================
-
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*,
-*::after,
-*::before {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
-img {
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 // Fonts
 // =========================================================================
 
@@ -70,6 +46,8 @@ $color4: #cbc7c8;
 $color5: #94919c;
 $color6: #8a6267;
 $color7: #7a110d;
+$color8: #a2c1d8;
+$color9: #495a42;
 
 // Breakpoints
 // =========================================================================
@@ -104,6 +82,37 @@ $breakpoint4: 1880px;
     @media only screen and (min-width: $breakpoint4) {
       @content;
     }
+  }
+}
+
+// Global styles
+// =========================================================================
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $color9;
+  text-decoration: none;
+
+  transition: all 0.3s ease-in-out;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color6;
   }
 }
 
@@ -198,13 +207,14 @@ $breakpoint4: 1880px;
   top: 10px;
 
   width: 210px;
-  margin-right: 20px;@include respond-to (break4) {
+  height: 100%;
+  margin-right: 20px;
+  overflow: auto;@include respond-to (break4) {
     width: 460px;
-  };
+  };;
 }
 
 .aside__logo {
-  // margin-right: 20px;
   max-width: 155px;
   height: auto;
   margin-bottom: 30px;
@@ -233,12 +243,17 @@ $breakpoint4: 1880px;
 
   font-size: 16px;
   line-height: 20px;
-  color: $color2;
+  color: $color2;@include respond-to (break4) {
+    font-size: 18px;
+    line-height: 22px;
+  };
 }
 
 .branch__item--active {
   font-weight: 700;
-  color: $color6;
+  & a {
+    color: $color6;
+  }
 }
 
 // Departments list
@@ -255,33 +270,41 @@ $breakpoint4: 1880px;
 }
 
 .departments__list {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 
   list-style: none;
-
-  border-left: 2px solid $color2;
 }
 
 .departments__item {
-  margin-bottom: 10px;
-  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-left: 6px;
 
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
 
-  border-left: 2px solid trasparent;
+  border-left: 4px solid $color8;
+
+  transition: all 0.3s linear;
+
+  @include respond-to (break4) {
+    font-size: 14px;
+    line-height: 18px;
+  };
 }
 
 .departments__item--active {
-  color: $color2;
+  color: $color6;
 
   border-left: 4px solid $color7;
 }
 
 .departments__item--active a {
-  border-bottom: 1px solid $color2;
+  border-bottom: 1px solid $color6;
 }
 
 // Employees
@@ -311,6 +334,10 @@ $breakpoint4: 1880px;
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
+  padding-top: 10px;
+  &:focus {
+    outline: none;
+  }
 }
 
 .employees__list {
@@ -334,16 +361,20 @@ $breakpoint4: 1880px;
   background-color: $color3;
   border-width: 1px;
   border-style: solid;
-  border-color: $color6;
+  border-color: $color2;
   border-radius: 5px;
-  box-shadow: 1px 2px 1px 0 $color5;
+  box-shadow: 1px 2px 1px 3px rgba($color5, 0.2);
 
   transition: all 0.3s ease-in-out;
 
+  &--highlight {
+    background-color: $color8;
+  }
   &:hover {
     background-color: $color4;
   }
 }
+
 .person__photo {
   width: 210px;
   height: 280px;
@@ -396,8 +427,12 @@ $breakpoint4: 1880px;
 }
 
 .person__info-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 10px;
+  overflow: hidden;
 
   font-size: 12px;
   line-height: 14px;
