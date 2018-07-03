@@ -40,13 +40,13 @@ $white: #ffffff;
 $black: #000000;
 //https://artsexperiments.withgoogle.com/artpalette/colors/94919c-cbc7c8-f9ebdd-36346c-55505e
 $color1: #55505e;
-$color2: #36346c;
-$color3: #f9ebdd;
+$color2: #556270;
+$color3: #faf4ff;
 $color4: #cbc7c8;
 $color5: #94919c;
 $color6: #8a6267;
 $color7: #7a110d;
-$color8: #a2c1d8;
+$color8: #e0f8ff;
 $color9: #495a42;
 
 // Breakpoints
@@ -238,12 +238,15 @@ a {
 
 .branch__item {
   margin: 0;
-  margin-bottom: 5px;
   padding: 0;
+  padding-bottom: 5px;
+  padding-left: 6px;
 
   font-size: 16px;
   line-height: 20px;
-  color: $color2;@include respond-to (break4) {
+  color: $color2;
+
+  border-left: 4px solid $color8;@include respond-to (break4) {
     font-size: 18px;
     line-height: 22px;
   };
@@ -251,6 +254,8 @@ a {
 
 .branch__item--active {
   font-weight: 700;
+
+  border-left: 4px solid $color7;
   & a {
     color: $color6;
   }
@@ -298,9 +303,11 @@ a {
 }
 
 .departments__item--active {
-  color: $color6;
-
   border-left: 4px solid $color7;
+  & a {
+    font-weight: 700;
+    color: $color6;
+  }
 }
 
 .departments__item--active a {
@@ -344,7 +351,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding: 0;
 
   list-style: none;

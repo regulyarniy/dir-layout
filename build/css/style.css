@@ -442,18 +442,21 @@ a {
 
 .branch__item {
   margin: 0;
-  margin-bottom: 5px;
   padding: 0;
+  padding-bottom: 5px;
+  padding-left: 6px;
   font-size: 16px;
   line-height: 20px;
-  color: #36346c; }
+  color: #556270;
+  border-left: 4px solid #e0f8ff; }
   @media only screen and (min-width: 1880px) {
     .branch__item {
       font-size: 18px;
       line-height: 22px; } }
 
 .branch__item--active {
-  font-weight: 700; }
+  font-weight: 700;
+  border-left: 4px solid #7a110d; }
   .branch__item--active a {
     color: #8a6267; }
 
@@ -484,7 +487,7 @@ a {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  border-left: 4px solid #a2c1d8;
+  border-left: 4px solid #e0f8ff;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear; }
   @media only screen and (min-width: 1880px) {
@@ -493,8 +496,10 @@ a {
       line-height: 18px; } }
 
 .departments__item--active {
-  color: #8a6267;
   border-left: 4px solid #7a110d; }
+  .departments__item--active a {
+    font-weight: 700;
+    color: #8a6267; }
 
 .departments__item--active a {
   border-bottom: 1px solid #8a6267; }
@@ -538,7 +543,7 @@ a {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding: 0;
   list-style: none; }
 
@@ -546,17 +551,17 @@ a {
   width: 210px;
   margin-right: 20px;
   margin-bottom: 20px;
-  background-color: #f9ebdd;
+  background-color: #faf4ff;
   border-width: 1px;
   border-style: solid;
-  border-color: #36346c;
+  border-color: #556270;
   border-radius: 5px;
   -webkit-box-shadow: 1px 2px 1px 3px rgba(148, 145, 156, 0.2);
           box-shadow: 1px 2px 1px 3px rgba(148, 145, 156, 0.2);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
   .person--highlight {
-    background-color: #a2c1d8; }
+    background-color: #e0f8ff; }
   .person:hover {
     background-color: #cbc7c8; }
 
@@ -565,7 +570,7 @@ a {
   height: 280px;
   border-width: 1px;
   border-style: solid;
-  border-color: #36346c;
+  border-color: #556270;
   border-radius: 5px; }
 
 .person__info {
@@ -593,7 +598,7 @@ a {
   font-weight: 700;
   font-size: 20px;
   line-height: 22px;
-  color: #36346c; }
+  color: #556270; }
 
 .person__name {
   width: 100%;
@@ -601,7 +606,7 @@ a {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-  color: #36346c; }
+  color: #556270; }
 
 .person__post {
   width: 100%;
