@@ -388,6 +388,12 @@ tocbot.init({
 //#####################################################################################################################
 //#####################################################################################################################
 
+function removeClassFromNodes(elementsArray, removedClass) {
+  for (var i = 0; i < elementsArray.length; i++) {
+    elementsArray[i].classList.remove(removedClass);
+  };
+};
+
 function searchScroll(element) {
   scrollIntoView(element, {
     time: 500,
@@ -396,6 +402,8 @@ function searchScroll(element) {
       left: 0
     },
   });
+  removeClassFromNodes(document.querySelectorAll('.search-highlight'), 'search-highlight')
+  element.classList.add('search-highlight');
 }
 
 function search(searchFormID, searchClass) {
@@ -406,7 +414,10 @@ function search(searchFormID, searchClass) {
 
   for (var i = 0; i < searched.length; i++) {
     var index = searched[i].innerHTML.toLowerCase().indexOf(pattern);
-    if (index != -1) {
+    if (!name) {
+      removeClassFromNodes(document.querySelectorAll('.search-highlight'), 'search-highlight')
+    }
+    if (index != -1 && name) {
       targetId = '#' + searched[i].id;
       searchScroll(document.querySelector(targetId));
       break;

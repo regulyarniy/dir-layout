@@ -252,6 +252,11 @@ a {
     font-size: 18px;
     line-height: 22px;
   };
+
+  &:hover,
+  &:focus {
+    border-left-color: $color6;
+  }
 }
 
 .branch__item--active {
@@ -265,10 +270,87 @@ a {
 
 // Search
 // =========================================================================
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
 
 .search-highlight {
-  outline: 1px solid red;
+  animation: shake 1s 0.5s ease-in-out forwards;
+  &.person {
+    box-shadow: 5px 5px 15px 0 rgba($color7, 0.5);
+  }
+  &.department {
+    color: $color7;
+  }
 }
+
+.search__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 10px;
+  padding-left: 6px;
+
+  border-left: 4px solid $color8;
+  &:hover,
+  &:focus-within {
+    border-left-color: $color6;
+  }
+}
+
+.search__label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.search__input {
+  width: 170px;
+  padding-left: 5px;
+
+  color: $color1;
+
+  border: 1px solid $color9;
+  border-radius: 3px;
+  &::placeholder {
+    color: $color4;
+  }
+  &:-ms-input-placeholder {
+    padding-left: 5px;
+
+    color: $color4;
+  }
+  &:focus {
+    outline: 1px dashed $color6;
+  }
+}
+
+
 
 // Departments list
 // =========================================================================
@@ -309,6 +391,10 @@ a {
     font-size: 14px;
     line-height: 18px;
   };
+  &:hover,
+  &:focus {
+    border-left-color: $color6;
+  }
 }
 
 .departments__item--active {
@@ -379,7 +465,7 @@ a {
   border-style: solid;
   border-color: $color2;
   border-radius: 5px;
-  box-shadow: 1px 2px 1px 3px rgba($color5, 0.2);
+  box-shadow: 5px 5px 15px 0 rgba($color5, 0.5);
 
   transition: all 0.3s ease-in-out;
   &--highlight {

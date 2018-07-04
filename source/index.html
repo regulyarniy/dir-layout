@@ -34,13 +34,13 @@
         </nav>
 
         <section class="search">
-          Поиск отдела:
-          <form id="searchDepartment" action="javascript:search('searchDepartment','department');">
-            <input class="search__input" type="text" placeholder="Начните вводить текст..">
+          <form class="search__form" id="searchDepartment" action="javascript:search('searchDepartment','department');">
+            <label class="search__label" for="department__search">Поиск отдела:</label>
+            <input class="search__input" id="department__search" type="text" placeholder="Вводите текст..">
           </form>
-          Поиск сотрудника:
-          <form id="searchPerson" action="javascript:search('searchPerson','person');">
-            <input class="search__input" type="text" placeholder="Начните вводить текст..">
+          <form class="search__form" id="searchPerson" action="javascript:search('searchPerson','person');">
+            <label class="search__label" for="person__search">Поиск сотрудника:</label>
+            <input class="search__input" id="person__search" type="text" placeholder="Вводите текст..">
           </form>
         </section>
 
@@ -65,6 +65,72 @@
         <h3 class="department">Отдел №1</h3>
         <ul class="employees__list">
           <li class="person person--highlight">
+            <img class="person__photo" src="img/person.jpg" alt="Иванов Иван Иванович" width="210" height="280">
+            <p class="person__info">
+              <a class="person__surname" href="#">Иванов</a>
+              <a class="person__name" href="#">Иван Иванович</a>
+              <span class="person__post">Директор</span>
+              <span class="person__info-line">
+                <small class="person__caption person__caption--email">Email:</small> <a class="person__email" href="mailto:director@gmail.com">director@gmail.com</a></span>
+              <span class="person__info-line"><small class="person__caption person__caption--place">Расположение:</small>
+                <span class="person__place">44, 301</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--internal">Внутренний:</small>
+                <span class="person__internal">77777</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--external">Городской:</small>
+                <span class="person__external">(4444) 55-55-55</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--mobile">Мобильный:</small>
+                <span class="person__mobile">+7-777-777-7777</span>
+              </span>
+            </p>
+          </li>
+          <li class="person">
+            <img class="person__photo" src="img/person.jpg" alt="Иванов Иван Иванович" width="210" height="280">
+            <p class="person__info">
+              <a class="person__surname" href="#">Иванов</a>
+              <a class="person__name" href="#">Иван Иванович</a>
+              <span class="person__post">Директор</span>
+              <span class="person__info-line">
+                <small class="person__caption person__caption--email">Email:</small> <a class="person__email" href="mailto:director@gmail.com">director@gmail.com</a></span>
+              <span class="person__info-line"><small class="person__caption person__caption--place">Расположение:</small>
+                <span class="person__place">44, 301</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--internal">Внутренний:</small>
+                <span class="person__internal">77777</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--external">Городской:</small>
+                <span class="person__external">(4444) 55-55-55</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--mobile">Мобильный:</small>
+                <span class="person__mobile">+7-777-777-7777</span>
+              </span>
+            </p>
+          </li>
+          <li class="person">
+            <img class="person__photo" src="img/person.jpg" alt="Иванов Иван Иванович" width="210" height="280">
+            <p class="person__info">
+              <a class="person__surname" href="#">Иванов</a>
+              <a class="person__name" href="#">Иван Иванович</a>
+              <span class="person__post">Директор</span>
+              <span class="person__info-line">
+                <small class="person__caption person__caption--email">Email:</small> <a class="person__email" href="mailto:director@gmail.com">director@gmail.com</a></span>
+              <span class="person__info-line"><small class="person__caption person__caption--place">Расположение:</small>
+                <span class="person__place">44, 301</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--internal">Внутренний:</small>
+                <span class="person__internal">77777</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--external">Городской:</small>
+                <span class="person__external">(4444) 55-55-55</span>
+              </span>
+              <span class="person__info-line"><small class="person__caption person__caption--mobile">Мобильный:</small>
+                <span class="person__mobile">+7-777-777-7777</span>
+              </span>
+            </p>
+          </li>
+          <li class="person">
             <img class="person__photo" src="img/person.jpg" alt="Иванов Иван Иванович" width="210" height="280">
             <p class="person__info">
               <a class="person__surname" href="#">Иванов</a>
