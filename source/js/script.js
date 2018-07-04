@@ -438,14 +438,30 @@ document.querySelector('#searchPerson .search__input').addEventListener('input',
 //#####################################################################################################################
 //#####################################################################################################################
 
+var header = document.querySelector('.header');
 var employees = document.querySelector('.employees');
 var popup = document.querySelector('.popup');
 var popupOpener = document.querySelectorAll('.popup-loader')
+var popupCloser = document.querySelector('.popup-close');
 
+//Open popup
 Array.prototype.forEach.call(popupOpener, function(e) {
   e.addEventListener('click',
     function(evt) {
       evt.preventDefault();
-      employees.classList.add('employees--shrinked')
+      header.classList.add('header--shrinked')
+      employees.classList.add('employees--shrinked');
+      popup.classList.add('popup--in');
+      popup.classList.remove('popup--out');
+      popup.classList.remove('visually-hidden');
     });
+});
+
+//Close popup
+popupCloser.addEventListener('click', function(e) {
+  e.preventDefault();
+  header.classList.remove('header--shrinked')
+  employees.classList.remove('employees--shrinked');
+  popup.classList.remove('popup--in');
+  popup.classList.add('popup--out');
 });

@@ -155,8 +155,8 @@
           <li class="person">
             <img class="person__photo" src="img/person.jpg" alt="Иванов Иван Иванович" width="210" height="280">
             <p class="person__info">
-              <a class="person__surname" href="person.html">Сидоров</a>
-              <a class="person__name" href="person.html">Иван Иванович</a>
+              <a class="person__surname popup-loader" href="person.html">Сидоров</a>
+              <a class="person__name popup-loader" href="person.html">Иван Иванович</a>
               <span class="person__post">Директор</span>
               <span class="person__info-line">
                 <small class="person__caption person__caption--email">Email:</small> <a class="person__email" href="mailto:director@gmail.com">director@gmail.com</a></span>
@@ -650,8 +650,9 @@
         </ul>
 
       </section>
-      <aside class="popup visually-hidden">
+      <aside class="popup popup--out visually-hidden">
         <h2 class="visually-hidden">Информация о сотруднике</h2>
+        <button class="popup-close" type="button"></button>
       </aside>
     </main>
 

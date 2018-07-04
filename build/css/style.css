@@ -319,6 +319,68 @@ template {
   font-style: normal;
   src: url("../fonts/subset-Merriweather-Black.woff2") format("woff2"), url("../fonts/subset-Merriweather-Black.woff") format("woff"); }
 
+@-webkit-keyframes popupSlideIn {
+  0% {
+    right: -240px; }
+  100% {
+    right: 0; } }
+
+@keyframes popupSlideIn {
+  0% {
+    right: -240px; }
+  100% {
+    right: 0; } }
+
+@-webkit-keyframes popupSlideOut {
+  0% {
+    right: 0; }
+  100% {
+    right: -240px; } }
+
+@keyframes popupSlideOut {
+  0% {
+    right: 0; }
+  100% {
+    right: -240px; } }
+
+@-webkit-keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
+@keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -400,10 +462,14 @@ a {
   min-height: 80px;
   margin-bottom: 40px;
   margin-left: 230px;
-  padding-top: 10px; }
+  padding-top: 10px;
+  -webkit-transition: margin-right 1.5s ease-in-out;
+  transition: margin-right 1.5s ease-in-out; }
   @media only screen and (min-width: 1880px) {
     .header {
       margin-left: 460px; } }
+  .header--shrinked {
+    margin-right: 230px; }
 
 .header__heading {
   -ms-flex-item-align: end;
@@ -469,44 +535,6 @@ a {
   border-left: 4px solid #7a110d; }
   .branch__item--active a {
     color: #8a6267; }
-
-@-webkit-keyframes shake {
-  10%,
-  90% {
-    -webkit-transform: translate3d(-1px, 0, 0);
-            transform: translate3d(-1px, 0, 0); }
-  20%,
-  80% {
-    -webkit-transform: translate3d(2px, 0, 0);
-            transform: translate3d(2px, 0, 0); }
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-            transform: translate3d(-4px, 0, 0); }
-  40%,
-  60% {
-    -webkit-transform: translate3d(4px, 0, 0);
-            transform: translate3d(4px, 0, 0); } }
-
-@keyframes shake {
-  10%,
-  90% {
-    -webkit-transform: translate3d(-1px, 0, 0);
-            transform: translate3d(-1px, 0, 0); }
-  20%,
-  80% {
-    -webkit-transform: translate3d(2px, 0, 0);
-            transform: translate3d(2px, 0, 0); }
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-            transform: translate3d(-4px, 0, 0); }
-  40%,
-  60% {
-    -webkit-transform: translate3d(4px, 0, 0);
-            transform: translate3d(4px, 0, 0); } }
 
 .search {
   display: -webkit-box;
@@ -623,7 +651,9 @@ a {
       flex-shrink: 0;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-left: 230px; }
+  margin-left: 230px;
+  -webkit-transition: margin-right 1.5s ease-in-out;
+  transition: margin-right 1.5s ease-in-out; }
   @media only screen and (min-width: 1880px) {
     .employees {
       margin-left: 460px; } }
@@ -888,9 +918,28 @@ a {
   line-height: 14px; }
 
 .popup {
+  position: relative;
   position: fixed;
   top: 0;
-  right: 0;
   width: 230px;
   height: 100vh;
   border: 1px solid red; }
+
+.popup--in {
+  right: -240px;
+  -webkit-animation: popupSlideIn 0.5s 0.8s ease-in-out forwards;
+          animation: popupSlideIn 0.5s 0.8s ease-in-out forwards; }
+
+.popup--out {
+  right: 0;
+  -webkit-animation: popupSlideOut 0.5s 0.8s ease-in-out forwards;
+          animation: popupSlideOut 0.5s 0.8s ease-in-out forwards; }
+
+.popup-close {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #0055cc;
+  border: 1px solid #7a110d; }

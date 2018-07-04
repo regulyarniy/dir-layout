@@ -87,6 +87,50 @@ $breakpoint4: 1880px;
   }
 }
 
+// Animations
+// =========================================================================
+
+@keyframes popupSlideIn {
+  0% {
+    right: -240px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes popupSlideOut {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -240px;
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
 // Global styles
 // =========================================================================
 
@@ -188,9 +232,16 @@ a {
   min-height: 80px;
   margin-bottom: 40px;
   margin-left: 230px;
-  padding-top: 10px;@include respond-to (break4) {
+  padding-top: 10px;
+
+  transition: margin-right 1.5s ease-in-out;
+
+  @include respond-to (break4) {
     margin-left: 460px;
   };
+  &--shrinked {
+    margin-right: 230px;
+  }
 }
 
 .header__heading {
@@ -283,29 +334,6 @@ a {
 
 // Search
 // =========================================================================
-
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
 
 .search {
   display: flex;
@@ -430,7 +458,9 @@ a {
   flex-grow: 0;
   flex-shrink: 0;
   flex-wrap: wrap;
-  margin-left: 230px;@include respond-to (break4) {
+  margin-left: 230px;
+
+  transition: margin-right 1.5s ease-in-out;@include respond-to (break4) {
     margin-left: 460px;
   };
   &--shrinked {
@@ -724,12 +754,36 @@ a {
 // =========================================================================
 
 .popup {
+  position: relative;
   position: fixed;
   top: 0;
-  right: 0;
 
   width: 230px;
   height: 100vh;
 
   border: 1px solid red;
+}
+
+.popup--in {
+  right: -240px;
+
+  animation: popupSlideIn 0.5s 0.8s ease-in-out forwards;
+}
+
+.popup--out {
+  right: 0;
+
+  animation: popupSlideOut 0.5s 0.8s ease-in-out forwards;
+}
+
+.popup-close {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: -10px;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: $color10;
+  border: 1px solid $color7;
 }
