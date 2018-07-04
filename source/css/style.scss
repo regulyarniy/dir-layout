@@ -48,6 +48,8 @@ $color6: #8a6267;
 $color7: #7a110d;
 $color8: #e0f8ff;
 $color9: #495a42;
+$color10: #0055cc;
+$color11: #976080;
 
 // Breakpoints
 // =========================================================================
@@ -163,7 +165,18 @@ a {
   background-color: $white;
 
   scroll-behavior: smooth;
+  &--popup {
+    width: 230px;
+    min-width: 210px;
+    padding: 10px;
+    padding-bottom: 0;
+
+    color: $color3;
+
+    background-color: $color2;
+  }
 }
+
 
 // Header
 // =========================================================================
@@ -270,6 +283,7 @@ a {
 
 // Search
 // =========================================================================
+
 @keyframes shake {
   10%,
   90% {
@@ -302,7 +316,8 @@ a {
 .search-highlight {
   animation: shake 1s 0.5s ease-in-out forwards;
   &.person {
-    box-shadow: 5px 5px 15px 0 rgba($color7, 0.5);
+    box-shadow: 5px 5px 15px 0 rgba($color7, 0.8),
+    -5px -5px 15px 0 rgba($color7, 0.8);
   }
   &.department {
     color: $color7;
@@ -349,8 +364,6 @@ a {
     outline: 1px dashed $color6;
   }
 }
-
-
 
 // Departments list
 // =========================================================================
@@ -468,10 +481,16 @@ a {
   box-shadow: 5px 5px 15px 0 rgba($color5, 0.5);
 
   transition: all 0.3s ease-in-out;
+  &--popup {
+    margin: 0;
+
+    background-color: $color4;
+    box-shadow: none;
+  }
   &--highlight {
     background-color: $color8;
   }
-  &:hover {
+  &:hover:not(.person--popup) {
     background-color: $color4;
   }
 }
@@ -518,14 +537,40 @@ a {
 }
 
 .person__post {
+  position: relative;
+
   width: 100%;
   margin-bottom: 20px;
+  padding-left: 30px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   color: $color7;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 22px;
+    height: 22px;
+
+    background-image: url("../img/person__post.png");
+    background-repeat: no-repeat;
+  }
+  &--subordinate {
+    margin-bottom: 5px;
+    padding: 0;
+
+    font-size: 10px;
+    line-height: 12px;
+    &::before {
+      background-image: none;
+    }
+  }
 }
+
 
 .person__info-line {
   display: flex;
@@ -538,4 +583,136 @@ a {
   font-size: 12px;
   line-height: 14px;
   color: $color1;
+}
+
+.person__caption {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.person__email,
+.person__place,
+.person__internal,
+.person__external,
+.person__mobile {
+  position: relative;
+
+  padding-left: 20px;
+
+  font-size: 12px;
+  line-height: 14px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 14px;
+    height: 14px;
+
+    background-repeat: no-repeat;;
+  }
+}
+
+.person__caption--email,
+.person__email {
+  color: $color9;
+}
+
+.person__email::before {
+  background-image: url("../img/person__email.png");
+}
+
+.person__caption--place,
+.person__place {
+  color: $color5;
+}
+
+.person__place::before {
+  background-image: url("../img/person__place.png");
+}
+
+.person__caption--internal,
+.person__internal {
+  font-weight: 700;
+  color: $color7;
+}
+
+.person__internal--subordinate {
+  align-self: flex-end;
+  margin-bottom: 5px;
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.person__internal::before {
+  background-image: url("../img/person__internal.png");
+}
+
+.person__caption--external,
+.person__external {
+  color: $color10;
+}
+
+.person__external::before {
+  background-image: url("../img/person__external.png");
+}
+
+.person__caption--mobile,
+.person__mobile {
+  color: $color11;
+}
+
+.person__mobile::before {
+  background-image: url("../img/person__mobile.png");
+}
+
+.person__subordinate {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  padding: 5px;
+
+  border-top: 1px dashed $color1;
+}
+
+.person__sub-title {
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 5px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: $color1;
+}
+
+.person__sub-list {
+  margin: 0;
+  margin-left: 5px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.person__sub-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  margin-bottom: 5px;
+
+  border-bottom: 1px dashed $color1;
+}
+
+.person__sub-name {
+  margin-bottom: 5px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
 }
