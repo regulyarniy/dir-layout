@@ -432,3 +432,20 @@ document.querySelector('#searchDepartment .search__input').addEventListener('inp
 document.querySelector('#searchPerson .search__input').addEventListener('input', function(e) {
   search('searchPerson', 'person');
 });
+
+//Popup loader
+//#####################################################################################################################
+//#####################################################################################################################
+//#####################################################################################################################
+
+var employees = document.querySelector('.employees');
+var popup = document.querySelector('.popup');
+var popupOpener = document.querySelectorAll('.popup-loader')
+
+Array.prototype.forEach.call(popupOpener, function(e) {
+  e.addEventListener('click',
+    function(evt) {
+      evt.preventDefault();
+      employees.classList.add('employees--shrinked')
+    });
+});

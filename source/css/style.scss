@@ -433,6 +433,9 @@ a {
   margin-left: 230px;@include respond-to (break4) {
     margin-left: 460px;
   };
+  &--shrinked {
+    margin-right: 230px;
+  }
 }
 
 .employees__title {
@@ -715,4 +718,18 @@ a {
   font-weight: 700;
   font-size: 12px;
   line-height: 14px;
+}
+
+// Popup
+// =========================================================================
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 230px;
+  height: 100vh;
+
+  border: 1px solid red;
 }
