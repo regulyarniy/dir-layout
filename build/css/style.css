@@ -527,6 +527,11 @@ a {
     .branch__item {
       font-size: 18px;
       line-height: 22px; } }
+  .branch__item--divider {
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    border-left: none; }
   .branch__item:hover, .branch__item:focus {
     border-left-color: #8a6267; }
 

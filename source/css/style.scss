@@ -318,7 +318,14 @@ a {
     font-size: 18px;
     line-height: 22px;
   };
+  &--divider {
+    padding-left: 10px;
 
+    font-weight: 700;
+    font-size: 12px;
+
+    border-left: none;
+  }
   &:hover,
   &:focus {
     border-left-color: $color6;
