@@ -275,9 +275,11 @@ a {
   width: 210px;
   height: 100%;
   margin-right: 20px;
-  overflow: auto;@include respond-to (break4) {
+  overflow: auto;
+
+  @include respond-to (break4) {
     width: 460px;
-  };;
+  };
 }
 
 .aside__logo {
@@ -760,8 +762,8 @@ a {
 
   width: 230px;
   height: 100vh;
-
-  border: 1px solid red;
+  padding-top: 10px;
+  overflow: auto;
 }
 
 .popup--in {
@@ -778,12 +780,21 @@ a {
 
 .popup-close {
   position: absolute;
-  top: calc(50% - 10px);
-  left: -10px;
+  top: 15px;
+  left: 5px;
 
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
 
-  background-color: $color10;
-  border: 1px solid $color7;
+  background-color: $color4;
+  background-image: url("../img/popup-close.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }

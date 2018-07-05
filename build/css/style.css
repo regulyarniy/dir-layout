@@ -923,7 +923,8 @@ a {
   top: 0;
   width: 230px;
   height: 100vh;
-  border: 1px solid red; }
+  padding-top: 10px;
+  overflow: auto; }
 
 .popup--in {
   right: -240px;
@@ -937,9 +938,17 @@ a {
 
 .popup-close {
   position: absolute;
-  top: calc(50% - 10px);
-  left: -10px;
-  width: 20px;
-  height: 20px;
-  background-color: #0055cc;
-  border: 1px solid #7a110d; }
+  top: 15px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: #cbc7c8;
+  background-image: url("../img/popup-close.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; }
+  .popup-close:focus {
+    outline: none; }

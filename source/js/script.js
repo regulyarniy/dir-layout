@@ -437,12 +437,36 @@ document.querySelector('#searchPerson .search__input').addEventListener('input',
 //#####################################################################################################################
 //#####################################################################################################################
 //#####################################################################################################################
+//https://gomakethings.com/getting-html-asynchronously-from-another-page/ Getting HTML asynchronously from another page (with native JavaScript)
 
 var header = document.querySelector('.header');
 var employees = document.querySelector('.employees');
 var popup = document.querySelector('.popup');
 var popupOpener = document.querySelectorAll('.popup-loader')
 var popupCloser = document.querySelector('.popup-close');
+var popupContent = popup.querySelector('.popup__content')
+
+var getHTML = function(url, callback) {
+
+  // Feature detection
+  if (!window.XMLHttpRequest) return;
+
+  // Create new request
+  var xhr = new XMLHttpRequest();
+
+  // Setup callback
+  xhr.onload = function() {
+    if (callback && typeof(callback) === 'function') {
+      callback(this.responseXML);
+    }
+  }
+
+  // Get the HTML
+  xhr.open('GET', url);
+  xhr.responseType = 'document';
+  xhr.send();
+
+};
 
 //Open popup
 Array.prototype.forEach.call(popupOpener, function(e) {
@@ -454,6 +478,9 @@ Array.prototype.forEach.call(popupOpener, function(e) {
       popup.classList.add('popup--in');
       popup.classList.remove('popup--out');
       popup.classList.remove('visually-hidden');
+      getHTML(e.href, function(response) {
+        popupContent.innerHTML = response.documentElement.innerHTML;
+      });
     });
 });
 
