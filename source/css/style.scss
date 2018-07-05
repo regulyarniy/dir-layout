@@ -8,30 +8,35 @@
 
 @font-face {
   font-weight: 400;
-  font-family: "Merriweather";
+  font-family: "Montserrat";
   font-style: normal;
 
-  src: url("../fonts/subset-Merriweather-Regular.woff2") format("woff2"), url("../fonts/subset-Merriweather-Regular.woff") format("woff");
+  src: url("../fonts/subset-Montserrat-Regular.woff2") format("woff2"),
+  url("../fonts/subset-Montserrat-Regular.woff") format("woff");
 }
-@font-face {
-  font-weight: 700;
-  font-family: "Merriweather";
-  font-style: normal;
 
-  src: url("../fonts/subset-Merriweather-Bold.woff2") format("woff2"), url("../fonts/subset-Merriweather-Bold.woff") format("woff");
-}
 @font-face {
   font-weight: 900;
-  font-family: "Merriweather";
+  font-family: "Montserrat";
   font-style: normal;
 
-  src: url("../fonts/subset-Merriweather-Black.woff2") format("woff2"), url("../fonts/subset-Merriweather-Black.woff") format("woff");
+  src: url("../fonts/subset-Montserrat-Black.woff2") format("woff2"),
+  url("../fonts/subset-Montserrat-Black.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: "Montserrat";
+  font-style: normal;
+
+  src: url("../fonts/subset-Montserrat-Bold.woff2") format("woff2"),
+  url("../fonts/subset-Montserrat-Bold.woff") format("woff");
 }
 
 // Fonts
 // =========================================================================
 
-$merriweather: "Merriweather", Georgia, serif;
+$montserrat: "Montserrat", Arial, serif;
 
 // Colors
 // =========================================================================
@@ -203,7 +208,7 @@ a {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  font-family: $merriweather;
+  font-family: $montserrat;
   color: $color1;
 
   background-color: $white;
