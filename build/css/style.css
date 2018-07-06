@@ -391,6 +391,20 @@ html {
   -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
+*::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ffffff; }
+
+*::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+
+*::-webkit-scrollbar-thumb {
+  background-color: #55505e;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+
 img {
   max-width: 100%; }
 
@@ -491,13 +505,13 @@ a {
 .aside {
   position: fixed;
   top: 10px;
-  width: 210px;
+  width: 200px;
   height: 100%;
   margin-right: 20px;
   overflow: auto; }
   @media only screen and (min-width: 1880px) {
     .aside {
-      width: 460px; } }
+      width: 450px; } }
 
 .aside__logo {
   max-width: 155px;
@@ -778,12 +792,11 @@ a {
     background-repeat: no-repeat;
     background-position: -2px 1px; }
   .person__post--subordinate {
+    min-height: auto;
     margin-bottom: 5px;
     padding: 0;
     font-size: 10px;
     line-height: 12px; }
-    .person__post--subordinate::before {
-      background-image: none; }
 
 .person__info-line {
   display: -webkit-box;
