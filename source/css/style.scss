@@ -315,13 +315,13 @@ a {
   padding-bottom: 5px;
   padding-left: 6px;
 
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 16px;
   color: $color2;
 
   border-left: 4px solid $color8;@include respond-to (break4) {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 18px;
   };
   &--divider {
     padding-left: 10px;
@@ -435,16 +435,16 @@ a {
   padding-left: 6px;
 
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 10px;
+  line-height: 12px;
 
   border-left: 4px solid $color8;
 
   transition: all 0.3s linear;
 
   @include respond-to (break4) {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 12px;
+    line-height: 14px;
   };
   &:hover,
   &:focus {
@@ -519,6 +519,7 @@ a {
   width: 210px;
   margin-right: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
 
   background-color: $color3;
   border-width: 1px;
@@ -545,6 +546,7 @@ a {
 .person__photo {
   width: 210px;
   height: 280px;
+  padding: 10px;
 
   border-width: 1px;
   border-style: solid;
@@ -575,36 +577,34 @@ a {
 
 .person__name {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   color: $color2;
+  word-spacing: 100px;
 }
 
 .person__post {
-  position: relative;
-
   width: 100%;
-  margin-bottom: 20px;
-  padding-left: 30px;
+  min-height: 65px;
+  margin-bottom: 10px;
 
   font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 12px;
+  line-height: 14px;
   color: $color7;
   &::before {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
 
-    width: 22px;
-    height: 22px;
+    display: inline-block;
+    width: 25px;
+    height: 20px;
 
     background-image: url("../img/person__post.png");
     background-repeat: no-repeat;
+    background-position: -2px 1px;
   }
   &--subordinate {
     margin-bottom: 5px;
@@ -664,6 +664,10 @@ a {
 .person__caption--email,
 .person__email {
   color: $color9;
+}
+
+.person__email {
+  font-size: 10px;
 }
 
 .person__email::before {
