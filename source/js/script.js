@@ -444,7 +444,8 @@ var employees = document.querySelector('.employees');
 var popup = document.querySelector('.popup');
 var popupOpener = document.querySelectorAll('.popup-loader')
 var popupCloser = document.querySelector('.popup-close');
-var popupContent = popup.querySelector('.popup__content')
+var popupContent = popup.querySelector('.popup__content');
+var popupReloader = popup.querySelectorAll('.popup .popup-load-inside');
 
 var getHTML = function(url, callback) {
 
@@ -465,8 +466,22 @@ var getHTML = function(url, callback) {
   xhr.open('GET', url);
   xhr.responseType = 'document';
   xhr.send();
-
 };
+
+//Reload content inside popup
+function addEventListenersToReloaders() {
+  Array.prototype.forEach.call(popupReloader, function(e) {
+    e.addEventListener('click',
+      function(evt) {
+        evt.preventDefault();
+        getHTML(e.href, function(response) {
+          popupContent.innerHTML = response.documentElement.innerHTML;
+          popupReloader = popup.querySelectorAll('.popup .popup-load-inside');
+          console.log('reloaded!');
+        });
+      });
+  });
+}
 
 //Open popup
 Array.prototype.forEach.call(popupOpener, function(e) {
@@ -480,6 +495,8 @@ Array.prototype.forEach.call(popupOpener, function(e) {
       popup.classList.remove('visually-hidden');
       getHTML(e.href, function(response) {
         popupContent.innerHTML = response.documentElement.innerHTML;
+        popupReloader = popup.querySelectorAll('.popup .popup-load-inside');
+        addEventListenersToReloaders();
       });
     });
 });
