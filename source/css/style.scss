@@ -259,7 +259,7 @@ a {
   margin-left: 230px;
   padding-top: 10px;
 
-  transition: margin-right 1.5s ease-in-out;
+  transition: margin-right 1s linear;
 
   @include respond-to (break4) {
     margin-left: 460px;
@@ -494,7 +494,9 @@ a {
   flex-wrap: wrap;
   margin-left: 230px;
 
-  transition: margin-right 1.5s ease-in-out;@include respond-to (break4) {
+  transition: margin-right 1s linear;
+
+  @include respond-to (break4) {
     margin-left: 460px;
   };
   &--shrinked {
@@ -808,13 +810,13 @@ a {
 .popup--in {
   right: -240px;
 
-  animation: popupSlideIn 0.5s 0.8s ease-in-out forwards;
+  animation: popupSlideIn 0.3s 0.5s ease-in-out forwards;
 }
 
 .popup--out {
   right: 0;
 
-  animation: popupSlideOut 0.5s 0.8s ease-in-out forwards;
+  animation: popupSlideOut 0.3s 0.5s ease-in-out forwards;
 }
 
 .popup-close {
@@ -822,18 +824,24 @@ a {
   top: 15px;
   left: 5px;
 
-  width: 40px;
+  width: 50px;
   height: 40px;
   padding: 0;
 
   background-color: $color4;
   background-image: url("../img/popup-close.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  transition: background-position 0.3s ease-in-out;
   &:focus {
     outline: none;
+  }
+  &:hover,
+  &:focus {
+    background-position: 10px;
   }
 }
