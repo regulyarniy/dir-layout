@@ -942,9 +942,6 @@ a {
   font-size: 12px;
   line-height: 14px; }
 
-.person__man-name {
-  margin-left: 5px; }
-
 .popup {
   position: relative;
   position: fixed;
