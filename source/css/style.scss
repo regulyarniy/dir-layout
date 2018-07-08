@@ -558,7 +558,7 @@ a {
     box-shadow: none;
   }
   &--highlight {
-    background-color: $color8;
+    background-color: desaturate($color8, 70%);
   }
   &:hover:not(.person--popup) {
     background-color: $color4;
