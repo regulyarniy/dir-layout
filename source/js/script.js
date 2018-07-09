@@ -509,3 +509,38 @@ popupCloser.addEventListener('click', function(e) {
   popup.classList.remove('popup--in');
   popup.classList.add('popup--out');
 });
+
+//Autoscroll aside
+//#####################################################################################################################
+//#####################################################################################################################
+//#####################################################################################################################
+//Set default delay
+var delay = 150;
+//Set delay if user manual scrolled or making actions in aside
+document.querySelector('.aside').addEventListener('mousemove', function() {
+  delay = 150;
+});
+document.querySelector('.aside').addEventListener('keydown', function() {
+  delay = 150;
+});
+document.querySelector('.aside').addEventListener('wheel', function() {
+  delay = 150;
+});
+
+
+function scrollToActive() {
+  if (delay > 0) {
+    delay -= 1;
+  } else {
+    var aside = document.querySelector('.aside');
+    var activeItem = document.querySelector('.departments__item--active');
+    var viewportHeight = document.documentElement.clientHeight;
+    if ((activeItem.offsetTop > aside.scrollTop + (viewportHeight / 10) * 9) && (aside.scrollTop + viewportHeight < aside.scrollHeight)) {
+      aside.scrollTop += 3;
+    } else if ((activeItem.offsetTop < aside.scrollTop + (viewportHeight / 10) * 1) && (aside.scrollTop > 0)) {
+      aside.scrollTop -= 3;
+    };
+  }
+  requestAnimationFrame(scrollToActive);
+}
+requestAnimationFrame(scrollToActive);
