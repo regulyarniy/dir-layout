@@ -477,7 +477,7 @@ function addEventListenersToReloaders() {
         getHTML(e.href, function(response) {
           popupContent.innerHTML = response.documentElement.innerHTML;
           popupReloader = popup.querySelectorAll('.popup .popup-load-inside');
-          console.log('reloaded!');
+          addEventListenersToReloaders();
         });
       });
   });
