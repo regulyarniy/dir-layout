@@ -552,14 +552,18 @@ requestAnimationFrame(scrollToActive);
 //#####################################################################################################################
 
 var menu = document.querySelector('.menu');
-var bodyStick = document.querySelector('.body');
+var bodyStick = document.querySelector('.body--index');
+var asideStick = document.querySelector('.aside');
+var popupStick = document.querySelector('.popup');
 
 function stickMenu() {
-  if (document.documentElement.scrollTop >= menu.scrollHeight) {
+  bodyStick.style.marginTop = menu.scrollHeight + 'px';
+  asideStick.style.marginTop = menu.scrollHeight + 'px';
+  popupStick.style.marginTop = menu.scrollHeight + 10 + 'px';
+  if (document.documentElement.scrollTop >= menu.scrollHeight - menu.scrollHeight / 2) {
     menu.classList.add('menu--fixed');
   } else {
     menu.classList.remove('menu--fixed');
-    bodyStick.style.marginTop = 0;
   }
   requestAnimationFrame(stickMenu);
 }
