@@ -757,7 +757,7 @@ a {
 .person__link {
   display: block;
   width: 190px;
-  height: 235px;
+  height: 253px;
   margin: 0;
   margin-top: 8px;
   margin-left: 8px;
@@ -789,7 +789,7 @@ a {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: calc(100% - 235px);
+  height: calc(100% - 253px);
   margin: 0;
   padding: 0;
   padding: 5px; }
