@@ -252,6 +252,9 @@ a {
 
 .header {
   display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   min-height: 80px;
@@ -287,6 +290,130 @@ a {
   letter-spacing: 1px;
 }
 
+// Menu list
+// =========================================================================
+
+.menu {
+  align-self: flex-start;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+}
+
+.menu--fixed {
+  position: fixed;
+  top: 0;
+  left: 230px;
+  z-index: 1;
+
+  max-width: calc(100% - 230px);
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-left: 40px;
+
+  background-color: $white;@include respond-to (break4) {
+    left: 460px;
+
+    max-width: calc(100% - 460px);
+  }
+}
+
+.menu__list {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.menu__item {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  padding-left: 6px;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: $color2;@include respond-to (break4) {
+    font-size: 16px;
+    line-height: 18px;
+  };
+
+  &--divider {
+    padding-left: 10px;
+
+    font-weight: 700;
+    font-size: 12px;
+
+    border-left: none;
+  }
+  &--right {
+    margin-left: auto;
+  }
+}
+
+.menu__item--active {
+  font-weight: 700;
+
+  & a {
+    color: $color6;
+  }
+}
+
+// Search
+// =========================================================================
+
+.search-highlight {
+  animation: shake 1s 0.5s ease-in-out forwards;
+  &.person {
+    box-shadow: 5px 5px 15px 0 rgba($color7, 0.8),
+    -5px -5px 15px 0 rgba($color7, 0.8);
+  }
+  &.department {
+    color: $color7;
+  }
+}
+
+.search__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 200px;
+  padding-bottom: 10px;
+  padding-left: 6px;
+  &:hover,
+  &:focus-within {
+    border-left-color: $color6;
+  }
+}
+
+.search__input {
+  width: 200px;
+  padding-left: 5px;
+
+  color: $color1;
+
+  border: 1px solid $color9;
+  border-radius: 3px;
+  &::placeholder {
+    color: $color4;
+  }
+  &:-ms-input-placeholder {
+    padding-left: 5px;
+
+    color: $color4;
+  }
+  &:focus {
+    outline: 1px dashed $color6;
+  }
+}
+
 // Main
 // =========================================================================
 
@@ -311,120 +438,6 @@ a {
   max-width: 155px;
   height: auto;
   margin-bottom: 30px;
-}
-
-// Branch list
-// =========================================================================
-
-.branch {
-  margin: 0;
-  margin-bottom: 30px;
-  padding: 0;
-}
-
-.branch__list {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.branch__item {
-  margin: 0;
-  padding: 0;
-  padding-bottom: 5px;
-  padding-left: 6px;
-
-  font-size: 14px;
-  line-height: 16px;
-  color: $color2;
-
-  border-left: 4px solid $color8;@include respond-to (break4) {
-    font-size: 16px;
-    line-height: 18px;
-  };
-  &--divider {
-    padding-left: 10px;
-
-    font-weight: 700;
-    font-size: 12px;
-
-    border-left: none;
-  }
-  &:hover,
-  &:focus {
-    border-left-color: $color6;
-  }
-}
-
-.branch__item--active {
-  font-weight: 700;
-
-  border-left: 4px solid $color7;
-  & a {
-    color: $color6;
-  }
-}
-
-// Search
-// =========================================================================
-
-.search {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-.search-highlight {
-  animation: shake 1s 0.5s ease-in-out forwards;
-  &.person {
-    box-shadow: 5px 5px 15px 0 rgba($color7, 0.8),
-    -5px -5px 15px 0 rgba($color7, 0.8);
-  }
-  &.department {
-    color: $color7;
-  }
-}
-
-.search__form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-  padding-bottom: 10px;
-  padding-left: 6px;
-
-  border-left: 4px solid $color8;
-  &:hover,
-  &:focus-within {
-    border-left-color: $color6;
-  }
-}
-
-.search__label {
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-.search__input {
-  width: 170px;
-  padding-left: 5px;
-
-  color: $color1;
-
-  border: 1px solid $color9;
-  border-radius: 3px;
-  &::placeholder {
-    color: $color4;
-  }
-  &:-ms-input-placeholder {
-    padding-left: 5px;
-
-    color: $color4;
-  }
-  &:focus {
-    outline: 1px dashed $color6;
-  }
 }
 
 // Departments list
@@ -475,7 +488,6 @@ a {
 .departments__item--active {
   border-left: 4px solid $color7;
   & a {
-    font-weight: 700;
     color: $color6;
   }
 }

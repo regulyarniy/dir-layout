@@ -13,46 +13,43 @@
   <div class="container">
 
     <header class="header">
-      <!-- <img class="header__logo" src="img/header__logo.svg" alt="Логотип"> -->
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__item"><a href="#">Филиал 1</a></li>
+          <li class="menu__item"><a href="#">Филиал 2</a></li>
+          <li class="menu__item menu__item--active"><a href="#">Филиал 3</a></li>
+          <li class="menu__item"><a href="#">Филиал 4</a></li>
+          <li class="menu__item"><a href="#">Филиал 5</a></li>
+          <li class="menu__item"><a href="#">Филиал 6</a></li>
+          <li class="menu__item"><a href="#">Филиал 7</a></li>
+          <li class="menu__item"><a href="#">Филиал 8</a></li>
+          <li class="menu__item"><a href="#">Филиал 9</a></li>
+          <li class="menu__item"><a href="#">Филиал 10</a></li>
+          <li class="menu__item menu__item--divider">Сортировка:</li>
+          <li class="menu__item"><a href="#">По алфавиту</a></li>
+          <li class="menu__item"><a href="#">По отделам</a></li>
+          <li class="menu__item menu__item--divider">Печать:</li>
+          <li class="menu__item"><a href="#">По алфавиту</a></li>
+          <li class="menu__item"><a href="#">По отделам</a></li>
+          <li class="menu__item menu__item--right">
+            <form class="search__form" id="searchDepartment" action="javascript:search('searchDepartment','department');">
+              <input class="search__input" id="department__search" type="text" placeholder="Поиск отдела..">
+            </form>
+          </li>
+          <li class="menu__item">
+            <form class="search__form" id="searchPerson" action="javascript:search('searchPerson','person');">
+              <input class="search__input" id="person__search" type="text" placeholder="Поиск сотрудника..">
+            </form>
+          </li>
+        </ul>
+      </nav>
       <h1 class="header__heading">Телефонный справочник</h1>
     </header>
 
     <main class="main">
-
       <aside class="aside">
         <h2 class="visually-hidden">Меню</h2>
         <img class="aside__logo" src="img/aside__logo.svg" alt="Логотип">
-        <nav class="branch">
-          <ul class="branch__list">
-            <li class="branch__item"><a href="#">Филиал 1</a></li>
-            <li class="branch__item"><a href="#">Филиал 2</a></li>
-            <li class="branch__item branch__item--active"><a href="#">Филиал 3</a></li>
-            <li class="branch__item"><a href="#">Филиал 4</a></li>
-            <li class="branch__item"><a href="#">Филиал 5</a></li>
-            <li class="branch__item"><a href="#">Филиал 6</a></li>
-            <li class="branch__item"><a href="#">Филиал 7</a></li>
-            <li class="branch__item"><a href="#">Филиал 8</a></li>
-            <li class="branch__item"><a href="#">Филиал 9</a></li>
-            <li class="branch__item"><a href="#">Филиал 10</a></li>
-            <li class="branch__item branch__item--divider">Сортировка:</li>
-            <li class="branch__item"><a href="#">По алфавиту</a></li>
-            <li class="branch__item"><a href="#">По отделам</a></li>
-            <li class="branch__item branch__item--divider">Печать:</li>
-            <li class="branch__item"><a href="#">По алфавиту</a></li>
-            <li class="branch__item"><a href="#">По отделам</a></li>
-          </ul>
-        </nav>
-
-        <section class="search">
-          <form class="search__form" id="searchDepartment" action="javascript:search('searchDepartment','department');">
-            <label class="search__label" for="department__search">Поиск отдела:</label>
-            <input class="search__input" id="department__search" type="text" placeholder="Вводите текст..">
-          </form>
-          <form class="search__form" id="searchPerson" action="javascript:search('searchPerson','person');">
-            <label class="search__label" for="person__search">Поиск сотрудника:</label>
-            <input class="search__input" id="person__search" type="text" placeholder="Вводите текст..">
-          </form>
-        </section>
 
         <section class="departments">
           <h2 class="departments__title">Поиск:</h2>

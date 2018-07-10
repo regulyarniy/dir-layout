@@ -399,7 +399,8 @@ function searchScroll(element) {
     time: 500,
     align: {
       top: 0,
-      left: 0
+      left: 0,
+      topOffset: 150
     },
   });
   removeClassFromNodes(document.querySelectorAll('.search-highlight'), 'search-highlight')
@@ -544,3 +545,22 @@ function scrollToActive() {
   requestAnimationFrame(scrollToActive);
 }
 requestAnimationFrame(scrollToActive);
+
+//Sticky menu
+//#####################################################################################################################
+//#####################################################################################################################
+//#####################################################################################################################
+
+var menu = document.querySelector('.menu');
+var bodyStick = document.querySelector('.body');
+
+function stickMenu() {
+  if (document.documentElement.scrollTop >= menu.scrollHeight) {
+    menu.classList.add('menu--fixed');
+  } else {
+    menu.classList.remove('menu--fixed');
+    bodyStick.style.marginTop = 0;
+  }
+  requestAnimationFrame(stickMenu);
+}
+requestAnimationFrame(stickMenu);
