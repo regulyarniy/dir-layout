@@ -2,6 +2,8 @@
 
 Design by me
 
+Demo: https://regulyarniy.github.io/dir-layout/build/index.html
+
 Scripts used:
 - Tocbot https://tscanlin.github.io/tocbot/
 - Search on page https://blog.codecentric.de/en/2013/11/javascript-search-text-html-page/
