@@ -746,7 +746,9 @@ a {
   .person--highlight {
     background-color: #ebf2f4; }
   .person:hover:not(.person--popup) {
-    background-color: #cbc7c8; }
+    background-color: #cbc7c8;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
 
 .person__photo {
   width: 210px;
