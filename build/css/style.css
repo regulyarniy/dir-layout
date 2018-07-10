@@ -499,7 +499,8 @@ a {
   color: #55505e;
   text-transform: uppercase;
   font-style: normal;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(85, 80, 94, 0.5); }
 
 .menu {
   display: -webkit-box;
@@ -702,14 +703,16 @@ a {
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
-  text-align: center; }
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(85, 80, 94, 0.5); }
 
 .department {
   width: 100%;
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
-  padding-top: 10px; }
+  padding-top: 10px;
+  text-shadow: 2px 2px 4px rgba(85, 80, 94, 0.5); }
   .department:focus {
     outline: none; }
 
@@ -751,11 +754,14 @@ a {
     -webkit-transform: scale(1.1);
             transform: scale(1.1); }
 
-.person__wrapper {
+.person__link {
+  display: block;
   width: 190px;
   height: 235px;
+  margin: 0;
   margin-top: 8px;
   margin-left: 8px;
+  padding: 0;
   overflow: hidden;
   border-width: 2px;
   border-style: solid;
