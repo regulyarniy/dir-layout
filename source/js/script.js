@@ -536,7 +536,7 @@ function scrollToActive() {
     var aside = document.querySelector('.aside');
     var activeItem = document.querySelector('.departments__item--active');
     var viewportHeight = document.documentElement.clientHeight;
-    if ((activeItem.offsetTop > aside.scrollTop + (viewportHeight / 10) * 5) && (aside.scrollTop + viewportHeight < aside.scrollHeight)) {
+    if ((activeItem.offsetTop > aside.scrollTop + (viewportHeight / 10) * 5) && (aside.scrollTop < aside.scrollHeight)) {
       aside.scrollTop += 3;
     } else if ((activeItem.offsetTop < aside.scrollTop + (viewportHeight / 10) * 1) && (aside.scrollTop > 0)) {
       aside.scrollTop -= 3;
@@ -564,6 +564,7 @@ function stickMenu() {
     bodyStick.style.marginTop = menu.scrollHeight + 'px';
     asideStick.style.marginTop = menu.scrollHeight + 'px';
     popupStick.style.marginTop = menu.scrollHeight + 10 + 'px';
+    asideStick.style.height = window.innerHeight - menu.scrollHeight + 'px';
     headerLogo.classList.remove('visually-hidden');
     asideLogo.classList.add('visually-hidden');
   } else {
@@ -571,6 +572,7 @@ function stickMenu() {
     bodyStick.style.marginTop = '';
     asideStick.style.marginTop = '';
     popupStick.style.marginTop = '';
+    asideStick.style.height = '';
     headerLogo.classList.add('visually-hidden');
     asideLogo.classList.remove('visually-hidden');
   }

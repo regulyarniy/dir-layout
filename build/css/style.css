@@ -622,7 +622,7 @@ a {
   position: fixed;
   top: 10px;
   width: 200px;
-  height: 95vh;
+  height: 100%;
   margin-right: 20px;
   overflow: auto; }
   @media only screen and (min-width: 1880px) {
