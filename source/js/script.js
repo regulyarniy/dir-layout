@@ -555,15 +555,24 @@ var menu = document.querySelector('.menu');
 var bodyStick = document.querySelector('.body--index');
 var asideStick = document.querySelector('.aside');
 var popupStick = document.querySelector('.popup');
+var headerLogo = document.querySelector('.header .header__logo');
+var asideLogo = document.querySelector('.aside .header__logo');
 
 function stickMenu() {
-  bodyStick.style.marginTop = menu.scrollHeight + 'px';
-  asideStick.style.marginTop = menu.scrollHeight + 'px';
-  popupStick.style.marginTop = menu.scrollHeight + 10 + 'px';
-  if (document.documentElement.scrollTop >= menu.scrollHeight - menu.scrollHeight / 2) {
+  if (document.documentElement.scrollTop > menu.offsetTop) {
     menu.classList.add('menu--fixed');
+    bodyStick.style.marginTop = menu.scrollHeight + 'px';
+    asideStick.style.marginTop = menu.scrollHeight + 'px';
+    popupStick.style.marginTop = menu.scrollHeight + 10 + 'px';
+    headerLogo.classList.remove('visually-hidden');
+    asideLogo.classList.add('visually-hidden');
   } else {
     menu.classList.remove('menu--fixed');
+    bodyStick.style.marginTop = '';
+    asideStick.style.marginTop = '';
+    popupStick.style.marginTop = '';
+    headerLogo.classList.add('visually-hidden');
+    asideLogo.classList.remove('visually-hidden');
   }
   requestAnimationFrame(stickMenu);
 }

@@ -13,8 +13,9 @@
   <div class="container">
 
     <header class="header">
+      <h1 class="header__heading">Телефонный справочник</h1>
       <nav class="menu">
-        <img class="header__logo" src="img/aside__logo.svg" alt="Логотип">
+        <img class="header__logo visually-hidden" src="img/aside__logo.svg" alt="Логотип">
         <ul class="menu__list">
           <li class="menu__item menu__item--divider">Организация 1:</li>
           <li class="menu__item"><a href="#">Филиал 1</a></li>
@@ -32,14 +33,14 @@
           <li class="menu__item"><a href="#">Филиал 3</a></li>
           <li class="menu__item"><a href="#">Филиал 4</a></li>
           <li class="menu__item menu__item--wrap"></li>
-          <li class="menu__item menu__item--right menu__item--divider">Сортировка:</li>
+          <li class="menu__item menu__item--divider">Сортировка:</li>
           <li class="menu__item"><a href="#">По алфавиту</a></li>
           <li class="menu__item"><a href="#">По отделам</a></li>
           <li class="menu__item menu__item--divider">Сохранить PDF:</li>
           <li class="menu__item"><a href="#">Отделы</a></li>
           <li class="menu__item"><a href="#">А-Я</a></li>
           <li class="menu__item menu__item--wrap"></li>
-          <li class="menu__item menu__item--right menu__item--divider">Быстрый поиск:</li>
+          <li class="menu__item menu__item--divider">Быстрый поиск:</li>
           <li class="menu__item">
             <form class="search__form" id="searchDepartment" action="javascript:search('searchDepartment','department');">
               <input class="search__input" id="department__search" type="text" placeholder="Поиск отдела..">
@@ -52,12 +53,12 @@
           </li>
         </ul>
       </nav>
-      <h1 class="header__heading">Телефонный справочник</h1>
     </header>
 
     <main class="main">
       <aside class="aside">
         <h2 class="visually-hidden">Меню</h2>
+        <img class="header__logo" src="img/aside__logo.svg" alt="Логотип">
 
         <section class="departments">
           <h2 class="departments__title">Поиск:</h2>
