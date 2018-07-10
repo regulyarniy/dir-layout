@@ -536,7 +536,7 @@ function scrollToActive() {
     var aside = document.querySelector('.aside');
     var activeItem = document.querySelector('.departments__item--active');
     var viewportHeight = document.documentElement.clientHeight;
-    if ((activeItem.offsetTop > aside.scrollTop + (viewportHeight / 10) * 9) && (aside.scrollTop + viewportHeight < aside.scrollHeight)) {
+    if ((activeItem.offsetTop > aside.scrollTop + (viewportHeight / 10) * 5) && (aside.scrollTop + viewportHeight < aside.scrollHeight)) {
       aside.scrollTop += 3;
     } else if ((activeItem.offsetTop < aside.scrollTop + (viewportHeight / 10) * 1) && (aside.scrollTop > 0)) {
       aside.scrollTop -= 3;
