@@ -466,6 +466,7 @@ a {
 .departments__list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -474,20 +475,17 @@ a {
 }
 
 .departments__item {
-  padding-bottom: 5px;
-  padding-left: 6px;
-
   font-weight: 400;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 12px;
+  line-height: 14px;
 
   border-left: 4px solid $color8;
 
   transition: all 0.3s linear;
 
   @include respond-to (break4) {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 16px;
   };
   &:hover,
   &:focus {
@@ -495,6 +493,8 @@ a {
   }
   & a {
     display: block;
+    padding: 5px;
+    padding-left: 6px;
 
     border-bottom: none;
   }
