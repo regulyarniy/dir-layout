@@ -489,8 +489,8 @@ Array.prototype.forEach.call(popupOpener, function(e) {
   e.addEventListener('click',
     function(evt) {
       evt.preventDefault();
-      header.classList.add('header--shrinked')
-      employees.classList.add('employees--shrinked');
+      //header.classList.add('header--shrinked')
+      //employees.classList.add('employees--shrinked');
       popup.classList.add('popup--in');
       popup.classList.remove('popup--out');
       popup.classList.remove('visually-hidden');
@@ -505,8 +505,8 @@ Array.prototype.forEach.call(popupOpener, function(e) {
 //Close popup
 popupCloser.addEventListener('click', function(e) {
   e.preventDefault();
-  header.classList.remove('header--shrinked')
-  employees.classList.remove('employees--shrinked');
+  //header.classList.remove('header--shrinked')
+  //employees.classList.remove('employees--shrinked');
   popup.classList.remove('popup--in');
   popup.classList.add('popup--out');
 });
