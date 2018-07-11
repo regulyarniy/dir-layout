@@ -493,17 +493,20 @@ a {
   &:focus {
     border-left-color: $color6;
   }
+  & a {
+    display: block;
+
+    border-bottom: none;
+  }
 }
 
 .departments__item--active {
   border-left: 4px solid $color7;
   & a {
     color: $color6;
-  }
-}
 
-.departments__item--active a {
-  border-bottom: 1px solid $color6;
+    border-bottom: none;
+  }
 }
 
 // Employees
@@ -666,7 +669,7 @@ a {
 
     background-image: url("../img/person__post.png");
     background-repeat: no-repeat;
-    background-position: -2px 1px;
+    background-position: 0 2px;
   }
   &--subordinate {
     min-height: auto;
@@ -719,7 +722,7 @@ a {
     width: 14px;
     height: 14px;
 
-    background-repeat: no-repeat;;
+    background-repeat: no-repeat;
   }
 }
 
@@ -841,8 +844,8 @@ a {
   top: 0;
 
   width: 230px;
-  height: 100vh;
-  //margin-top: 100px;
+  height: 100%;
+  margin-top: 10px;
   overflow: auto;
 }
 
@@ -863,11 +866,11 @@ a {
   top: 5px;
   left: 5px;
 
-  width: 50px;
+  width: 210px;
   height: 40px;
   padding: 0;
 
-  background-color: $color4;
+  background-color: transparent;
   background-image: url("../img/popup-close.png");
   background-repeat: no-repeat;
   background-position: left;
@@ -881,6 +884,6 @@ a {
   }
   &:hover,
   &:focus {
-    background-position: 10px;
+    background-position: 90%;
   }
 }

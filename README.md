@@ -11,4 +11,4 @@ Scripts used:
 - Getting HTML asynchronously from another page https://gomakethings.com/getting-html-asynchronously-from-another-page/
 
 Icons used:
-- Icons8 Nolan https://icons8.com/
+- Icons8 https://icons8.com/
