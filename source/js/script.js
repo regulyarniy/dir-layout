@@ -401,7 +401,6 @@ function searchScroll(element) {
     time: 500,
     align: {
       top: 0,
-      left: 0,
       topOffset: 150
     },
   });
