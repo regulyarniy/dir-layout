@@ -565,7 +565,7 @@ function stickMenu() {
     menu.classList.add('menu--fixed');
     bodyStick.style.marginTop = menu.scrollHeight + 'px';
     asideStick.style.marginTop = menu.scrollHeight + 'px';
-    popupStick.style.marginTop = menu.scrollHeight + 10 + 'px';
+    popupStick.style.height = window.innerHeight - menu.scrollHeight - 10 + 'px';
     asideStick.style.height = window.innerHeight - menu.scrollHeight + 'px';
     headerLogo.classList.remove('visually-hidden');
     asideLogo.classList.add('visually-hidden');
@@ -573,7 +573,7 @@ function stickMenu() {
     menu.classList.remove('menu--fixed');
     bodyStick.style.marginTop = '';
     asideStick.style.marginTop = '';
-    popupStick.style.marginTop = '';
+    popupStick.style.height = '';
     asideStick.style.height = '';
     headerLogo.classList.add('visually-hidden');
     asideLogo.classList.remove('visually-hidden');
