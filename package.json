@@ -2,25 +2,30 @@
   "name": "dir-layout",
   "version": "1.0.0",
   "description": "Layout for phone directory",
-  "main": "gulpfile.js",
   "dependencies": {
-    "hoek": "^5.0.3"
+    "hoek": "^5.0.4"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.26.3",
     "emitter-steward": "^1.0.0",
+    "eslint": "5.11.1",
+    "eslint-config-htmlacademy": "0.5.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-cssnano": "^2.1.3",
-    "gulp-rename": "^1.3.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
     "pump": "^3.0.0",
-    "run-sequence": "^2.2.1"
+    "require-dir": "1.2.0",
+    "run-sequence": "^2.2.1",
+    "stylelint": "9.9.0",
+    "stylelint-config-htmlacademy": "0.1.1"
   },
   "scripts": {
-    "gulp": "gulp"
+    "build": "gulp build",
+    "start": "gulp watch"
   },
   "repository": {
     "type": "git",
