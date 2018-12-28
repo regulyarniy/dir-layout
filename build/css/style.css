@@ -321,27 +321,35 @@ template {
 
 @-webkit-keyframes popupSlideIn {
   0% {
-    right: -240px; }
+    -webkit-transform: translateX(240px);
+            transform: translateX(240px); }
   100% {
-    right: 0; } }
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); } }
 
 @keyframes popupSlideIn {
   0% {
-    right: -240px; }
+    -webkit-transform: translateX(240px);
+            transform: translateX(240px); }
   100% {
-    right: 0; } }
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); } }
 
 @-webkit-keyframes popupSlideOut {
   0% {
-    right: 0; }
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); }
   100% {
-    right: -240px; } }
+    -webkit-transform: translateX(240px);
+            transform: translateX(240px); } }
 
 @keyframes popupSlideOut {
   0% {
-    right: 0; }
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); }
   100% {
-    right: -240px; } }
+    -webkit-transform: translateX(240px);
+            transform: translateX(240px); } }
 
 @-webkit-keyframes shake {
   10%,
@@ -992,12 +1000,10 @@ a {
   overflow: auto; }
 
 .popup--in {
-  right: -240px;
   -webkit-animation: popupSlideIn 0.3s 0.5s ease-in-out forwards;
           animation: popupSlideIn 0.3s 0.5s ease-in-out forwards; }
 
 .popup--out {
-  right: 0;
   -webkit-animation: popupSlideOut 0.3s 0.5s ease-in-out forwards;
           animation: popupSlideOut 0.3s 0.5s ease-in-out forwards; }
 

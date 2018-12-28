@@ -97,19 +97,19 @@ $breakpoint4: 1880px;
 
 @keyframes popupSlideIn {
   0% {
-    right: -240px;
+    transform: translateX(240px);
   }
   100% {
-    right: 0;
+    transform: translateX(0px);
   }
 }
 
 @keyframes popupSlideOut {
   0% {
-    right: 0;
+    transform: translateX(0px);
   }
   100% {
-    right: -240px;
+    transform: translateX(240px);
   }
 }
 
@@ -847,14 +847,10 @@ a {
 }
 
 .popup--in {
-  right: -240px;
-
   animation: popupSlideIn 0.3s 0.5s ease-in-out forwards;
 }
 
 .popup--out {
-  right: 0;
-
   animation: popupSlideOut 0.3s 0.5s ease-in-out forwards;
 }
 

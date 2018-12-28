@@ -3,6 +3,7 @@ import tocbot from 'tocbot';
 import scrollIntoView from 'scroll-into-view';
 import generateID from './generate-id';
 import fetchData from "./fetch-data";
+import {TweenMax, Power1} from "gsap/TweenMax";
 
 document.addEventListener(`DOMContentLoaded`, () => {
 
@@ -96,7 +97,10 @@ document.addEventListener(`DOMContentLoaded`, () => {
   const popupContent = popup.querySelector(`.popup__content`);
   let popupReloaders = popup.querySelectorAll(`.popup .popup-load-inside`);
 
-  function addEventListenersToReloaders() {
+  TweenMax.to(popup, 0.5, {x: 240, autoAlpha: 0, ease: Power1.easeInOut});
+
+
+  const addEventListenersToReloaders = () => {
     popupReloaders.forEach((element) => {
       element.addEventListener(`click`, (event) => {
         event.preventDefault();
@@ -107,15 +111,13 @@ document.addEventListener(`DOMContentLoaded`, () => {
         });
       });
     });
-  }
+  };
 
   // Open popup
   popupOpener.forEach((element) => {
     element.addEventListener(`click`, (event) => {
       event.preventDefault();
-      popup.classList.add(`popup--in`);
-      popup.classList.remove(`popup--out`);
-      popup.classList.remove(`visually-hidden`);
+      TweenMax.to(popup, 0.5, {x: 0, autoAlpha: 1, ease: Power1.easeInOut});
       fetchData(element.href, (response) => {
         popupContent.innerHTML = response.documentElement.innerHTML;
         popupReloaders = popup.querySelectorAll(`.popup .popup-load-inside`);
@@ -127,8 +129,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
   // Close popup
   popupCloser.addEventListener(`click`, (event) => {
     event.preventDefault();
-    popup.classList.remove(`popup--in`);
-    popup.classList.add(`popup--out`);
+    TweenMax.to(popup, 0.5, {x: 240, autoAlpha: 0, ease: Power1.easeInOut});
   });
 
 
