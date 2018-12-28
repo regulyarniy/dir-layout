@@ -117,11 +117,11 @@ document.addEventListener(`DOMContentLoaded`, () => {
   popupOpener.forEach((element) => {
     element.addEventListener(`click`, (event) => {
       event.preventDefault();
-      TweenMax.to(popup, 0.5, {x: 0, autoAlpha: 1, ease: Power1.easeInOut});
       fetchData(element.href, (response) => {
         popupContent.innerHTML = response.documentElement.innerHTML;
         popupReloaders = popup.querySelectorAll(`.popup .popup-load-inside`);
         addEventListenersToReloaders();
+        TweenMax.to(popup, 0.5, {x: 0, autoAlpha: 1, ease: Power1.easeInOut});
       });
     });
   });
