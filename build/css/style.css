@@ -804,7 +804,21 @@ a {
   height: calc(100% - 253px);
   margin: 0;
   padding: 0;
-  padding: 5px; }
+  padding: 5px;
+  position: relative; }
+  .person__info::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/santa-hat.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg); }
 
 .person__surname {
   width: 100%;
