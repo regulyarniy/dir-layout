@@ -35,6 +35,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
     scrollSmooth: true,
     // Class to add to active list items.
     activeListItemClass: `departments__item--active`,
+    // Headings offset between the headings and the top of the document (this is meant for minor adjustments).
+    headingsOffset: 120,
     // Smooth scroll offset
     scrollSmoothOffset: -120,
   });
