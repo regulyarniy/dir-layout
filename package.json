@@ -24,6 +24,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "^3.0.1",
+    "nodelist-foreach-polyfill": "1.2.0",
     "require-dir": "1.2.0",
     "rollup-plugin-babel": "4.1.0",
     "rollup-plugin-commonjs": "9.2.0",

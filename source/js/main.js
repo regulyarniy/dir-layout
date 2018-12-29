@@ -1,4 +1,5 @@
 import '@babel/polyfill';
+import 'nodelist-foreach-polyfill';
 import tocbot from 'tocbot';
 import scrollIntoView from 'scroll-into-view';
 import generateID from './generate-id';
@@ -25,7 +26,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     // Where to grab the headings to build the table of contents.
     contentSelector: `.employees`,
     // Which headings to grab inside of the contentSelector element.
-    headingSelector: `h3`,
+    headingSelector: `.department`,
     // Main class to add to lists.
     listClass: `departments__list`,
     // Class to add to list items.
@@ -34,10 +35,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
     scrollSmooth: true,
     // Class to add to active list items.
     activeListItemClass: `departments__item--active`,
-    // Headings offset between the headings and the top of the document (this is meant for minor adjustments).
-    headingsOffset: 120,
     // Smooth scroll offset
-    scrollSmoothOffset: -120
+    scrollSmoothOffset: -120,
   });
 
   /**
