@@ -1,6 +1,5 @@
 // Imports
 // =========================================================================
-
 @import "normalize/normalize";
 
 //Font-face
@@ -69,23 +68,19 @@ $breakpoint4: 1880px;
     @media only screen and (max-width: $breakpoint1) {
       @content;
     }
-  }
-  @else if $media == break1 {
+  } @else if $media == break1 {
     @media only screen and (min-width: $breakpoint1 + 1) and (max-width: $breakpoint2 - 1) {
       @content;
     }
-  }
-  @else if $media == break2 {
+  } @else if $media == break2 {
     @media only screen and (min-width: $breakpoint2 + 1) and (max-width: $breakpoint3 - 1) {
       @content;
     }
-  }
-  @else if $media == break3 {
+  } @else if $media == break3 {
     @media only screen and (min-width: $breakpoint3 + 1) and (max-width: $breakpoint4 - 1) {
       @content;
     }
-  }
-  @else if $media == break4 {
+  } @else if $media == break4 {
     @media only screen and (min-width: $breakpoint4) {
       @content;
     }
@@ -141,14 +136,14 @@ $breakpoint4: 1880px;
 
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::after,
 *::before {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 * {
@@ -180,6 +175,7 @@ a {
   text-decoration: none;
 
   transition: all 0.3s ease-in-out;
+
   &:hover,
   &:focus,
   &:active {
@@ -211,15 +207,23 @@ a {
   max-width: $breakpoint1;
   margin: 0 auto;
   padding-right: 20px;
-  padding-left: 20px;@include respond-to (break2) {
+  padding-left: 20px;
+  @include respond-to (break2) {
     max-width: $breakpoint2;
-  };@include respond-to (break3) {
+  }
+;
+  @include respond-to (break3) {
     max-width: $breakpoint3;
-  };@include respond-to (break4) {
+  }
+;
+  @include respond-to (break4) {
     max-width: $breakpoint4;
-  };@include respond-to (break4) {
+  }
+;
+  @include respond-to (break4) {
     max-width: $breakpoint4;
-  };
+  }
+;
 }
 
 .body {
@@ -234,6 +238,7 @@ a {
   background-color: $white;
 
   scroll-behavior: smooth;
+
   &--popup {
     width: 230px;
     min-width: 210px;
@@ -259,7 +264,9 @@ a {
 
   @include respond-to (break4) {
     margin-left: 460px;
-  };
+  }
+;
+
   &--shrinked {
     margin-right: 230px;
   }
@@ -352,16 +359,19 @@ a {
   @include respond-to (break4) {
     font-size: 14px;
     line-height: 16px;
-  };
+  }
+;
 
   &--divider {
     margin-right: 10px;
 
     font-weight: 700;
   }
+
   &--right {
     margin-left: auto;
   }
+
   &--wrap {
     width: 100%;
   }
@@ -380,10 +390,12 @@ a {
 
 .search-highlight {
   animation: shake 1s 0.5s ease-in-out forwards;
+
   &.person {
     box-shadow: 5px 5px 15px 0 rgba($color7, 0.8),
     -5px -5px 15px 0 rgba($color7, 0.8);
   }
+
   &.department {
     color: $color7;
   }
@@ -396,6 +408,7 @@ a {
   width: 200px;
   padding-bottom: 10px;
   padding-left: 6px;
+
   &:hover,
   &:focus-within {
     border-left-color: $color6;
@@ -410,14 +423,17 @@ a {
 
   border: 1px solid $color9;
   border-radius: 3px;
+
   &::placeholder {
     color: $color4;
   }
+
   &:-ms-input-placeholder {
     padding-left: 5px;
 
     color: $color4;
   }
+
   &:focus {
     outline: 1px dashed $color6;
   }
@@ -440,7 +456,8 @@ a {
 
   @include respond-to (break4) {
     width: 450px;
-  };
+  }
+;
 }
 
 // Departments list
@@ -483,11 +500,14 @@ a {
   @include respond-to (break4) {
     font-size: 14px;
     line-height: 16px;
-  };
+  }
+;
+
   &:hover,
   &:focus {
     border-left-color: $color10;
   }
+
   & a {
     display: block;
     padding: 5px;
@@ -499,6 +519,7 @@ a {
 
 .departments__item--active {
   border-left: 4px solid $color7;
+
   & a {
     color: $color7;
 
@@ -520,7 +541,9 @@ a {
 
   @include respond-to (break4) {
     margin-left: 460px;
-  };
+  }
+;
+
   &--shrinked {
     margin-right: 230px;
   }
@@ -544,6 +567,7 @@ a {
   padding-top: 10px;
 
   text-shadow: 2px 2px 4px rgba($color1, 0.5);
+
   &:focus {
     outline: none;
   }
@@ -576,18 +600,22 @@ a {
   box-shadow: 5px 5px 15px 0 rgba($color5, 0.5);
 
   transition: all 0.3s ease-in-out;
+
   &--popup {
     margin: 0;
 
     background-color: $color4;
     box-shadow: none;
   }
+
   &--highlight {
     background-color: desaturate($color8, 70%);
   }
+
   &:hover:not(.person--popup) {
     background-color: $color4;
   }
+
   &:hover:not(.person--popup) .person__photo {
     transform: scale(1.1);
   }
@@ -624,11 +652,12 @@ a {
   flex-wrap: wrap;
   height: calc(100% - 253px);
   margin: 0;
-  padding: 0;
   padding: 5px;
   position: relative;
+
   &::before {
-    content: "";
+    //content: "";
+    //ney year santa hat
     position: absolute;
     top: 3px;
     left: 0;
@@ -671,6 +700,7 @@ a {
   font-size: 12px;
   line-height: 14px;
   color: $color7;
+
   &::before {
     content: "";
 
@@ -682,6 +712,7 @@ a {
     background-repeat: no-repeat;
     background-position: 0 2px;
   }
+
   &--subordinate {
     min-height: auto;
     margin-bottom: 5px;
@@ -703,6 +734,7 @@ a {
   font-size: 12px;
   line-height: 14px;
   color: $color1;
+
   &--bottom {
     margin-top: auto;
   }
@@ -724,6 +756,7 @@ a {
 
   font-size: 12px;
   line-height: 14px;
+
   &:before {
     content: "";
     position: absolute;
@@ -886,9 +919,11 @@ a {
   cursor: pointer;
 
   transition: background-position 0.3s ease-in-out;
+
   &:focus {
     outline: none;
   }
+
   &:hover,
   &:focus {
     background-position: 90%;

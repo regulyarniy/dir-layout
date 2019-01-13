@@ -803,11 +803,9 @@ a {
       flex-wrap: wrap;
   height: calc(100% - 253px);
   margin: 0;
-  padding: 0;
   padding: 5px;
   position: relative; }
   .person__info::before {
-    content: "";
     position: absolute;
     top: 3px;
     left: 0;
