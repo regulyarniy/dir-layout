@@ -2,7 +2,7 @@
 
 Design by me
 
-Demo: https://regulyarniy.github.io/dir-layout/build/index.html
+Demo: https://regulyarniy.github.io/dir-layout/
 
 Scripts used:
 - Tocbot https://tscanlin.github.io/tocbot/
