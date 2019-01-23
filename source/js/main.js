@@ -59,8 +59,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
         topOffset: 150
       },
     });
-    removeClassFromNodes(document.querySelectorAll(`.search-highlight`), `search-highlight`);
-    element.classList.add(`search-highlight`);
+    removeClassFromNodes(document.querySelectorAll(`.search--highlight`), `search--highlight`);
+    element.classList.add(`search--highlight`);
   };
 
   const search = (searchFormID, searchClass) => {
@@ -198,5 +198,3 @@ document.addEventListener(`DOMContentLoaded`, () => {
   };
   requestAnimationFrame(stickMenu);
 });
-
-

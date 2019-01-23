@@ -1,0 +1,13 @@
+.aside {
+  position: fixed;
+  top: 10px;
+
+  width: 200px;
+  height: 100%;
+  margin-right: 20px;
+  overflow: auto;
+
+  @include respond-to (break4) {
+    width: 450px;
+  }
+}

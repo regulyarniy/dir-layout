@@ -1,0 +1,42 @@
+.header {
+  min-height: 80px;
+  margin-bottom: 40px;
+  margin-left: 230px;
+
+  transition: margin-right 1s linear;
+
+  @include respond-to (break4) {
+    margin-left: 460px;
+  }
+
+  &--shrinked {
+    margin-right: 230px;
+  }
+}
+
+.header__logo {
+  align-self: flex-start;
+  max-width: 155px;
+  height: auto;
+  margin-right: 50px;
+}
+
+.header__heading {
+  align-self: flex-end;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-bottom: 15px;
+  margin-left: auto;
+  padding: 0;
+
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 42px;
+  vertical-align: bottom;
+  text-align: center;
+  color: $color1;
+  text-transform: uppercase;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba($color1, 0.5);
+}

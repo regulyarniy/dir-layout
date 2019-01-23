@@ -1,0 +1,291 @@
+.person {
+  width: 210px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  background-color: $color3;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $color2;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0 rgba($color5, 0.5);
+
+  transition: all 0.3s ease-in-out;
+
+  &--popup {
+    margin: 0;
+
+    background-color: $color4;
+    box-shadow: none;
+  }
+
+  &--highlight {
+    background-color: desaturate($color8, 70%);
+  }
+
+  &:hover:not(.person--popup) {
+    background-color: $color4;
+  }
+
+  &:hover:not(.person--popup) .person__photo {
+    transform: scale(1.1);
+  }
+}
+
+.person__link {
+  display: block;
+  width: 190px;
+  height: 253px;
+  margin: 0;
+  margin-top: 8px;
+  margin-left: 8px;
+  padding: 0;
+  overflow: hidden;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: $color2;
+  border-radius: 5px;
+}
+
+.person__photo {
+  width: 100%;
+  height: 100%;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.person__info {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(100% - 253px);
+  margin: 0;
+  padding: 5px;
+  position: relative;
+
+  &::before {
+    //content: "";
+    //ney year santa hat
+    position: absolute;
+    top: 3px;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/santa-hat.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(30deg);
+  }
+}
+
+.person__surname {
+  width: 100%;
+  margin-top: 10px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: $color2;
+}
+
+.person__name {
+  width: 100%;
+  margin-bottom: 5px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color2;
+  word-spacing: 100px;
+}
+
+.person__post {
+  width: 100%;
+  margin-bottom: 10px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color7;
+
+  &::before {
+    content: "";
+
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+
+    background-image: url("../img/person__post.png");
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+  }
+
+  &--subordinate {
+    min-height: auto;
+    margin-bottom: 5px;
+    padding: 0;
+
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.person__info-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+
+  font-size: 12px;
+  line-height: 14px;
+  color: $color1;
+
+  &--bottom {
+    margin-top: auto;
+  }
+}
+
+.person__caption {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.person__email,
+.person__place,
+.person__internal,
+.person__external,
+.person__mobile {
+  position: relative;
+
+  padding-left: 20px;
+
+  font-size: 12px;
+  line-height: 14px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 14px;
+    height: 14px;
+
+    background-repeat: no-repeat;
+  }
+}
+
+.person__caption--email,
+.person__email {
+  color: $color9;
+}
+
+.person__email {
+  font-size: 10px;
+}
+
+.person__email::before {
+  background-image: url("../img/person__email.png");
+}
+
+.person__caption--place,
+.person__place {
+  color: $color5;
+}
+
+.person__place::before {
+  background-image: url("../img/person__place.png");
+}
+
+.person__caption--internal,
+.person__internal {
+  font-weight: 700;
+  color: $color7;
+}
+
+.person__internal--subordinate {
+  align-self: flex-end;
+  margin-bottom: 5px;
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.person__internal::before {
+  background-image: url("../img/person__internal.png");
+}
+
+.person__caption--external,
+.person__external {
+  color: $color10;
+}
+
+.person__external::before {
+  background-image: url("../img/person__external.png");
+}
+
+.person__caption--mobile,
+.person__mobile {
+  color: $color11;
+}
+
+.person__mobile::before {
+  background-image: url("../img/person__mobile.png");
+}
+
+.person__subordinate,
+.person__manager {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0;
+  padding: 5px;
+
+  border-top: 1px dashed $color1;
+}
+
+.person__sub-title,
+.person__man-title {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: $color1;
+}
+
+.person__sub-list {
+  margin: 0;
+  margin-left: 5px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.person__sub-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  margin-bottom: 5px;
+
+  border-bottom: 1px dashed $color1;
+}
+
+.person__sub-name,
+.person__man-name {
+  margin-bottom: 5px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+}

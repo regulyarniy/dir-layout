@@ -29,3 +29,13 @@ node_modules
 
 # Webstorm configs
 .idea
+
+# Build directory
+build
+
+# Generated images
+source/img/*.png
+source/img/*.jpg
+source/img/*.jpeg
+source/img/*.webp
+source/img/*.svg

@@ -1,0 +1,12 @@
+exports.clean = require(`./clean`);
+exports.copyAssets = require(`./copy-assets`);
+exports.generateSVG = require(`./generate-svg`);
+exports.generateWEBP = require(`./generate-webp`);
+exports.minifyImages = require(`./minify-images`);
+exports.generateHtml = require(`./generate-html`);
+exports.generateCSS = require(`./generate-css`);
+exports.generateScripts = require(`./generate-scripts`);
+exports.Server = require(`./server`);
+exports.watchFiles = require(`./watch-files`);
+exports.cleanImages = require(`./clean-images`);
+exports.Config = require(`./config`);

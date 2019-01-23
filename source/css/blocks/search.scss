@@ -1,0 +1,53 @@
+.search {
+  background-color: transparent;
+}
+
+.search--highlight {
+  animation: shake 1s 0.5s ease-in-out forwards;
+
+  &.person {
+    box-shadow: 5px 5px 15px 0 rgba($color7, 0.8), -5px -5px 15px 0 rgba($color7, 0.8);
+  }
+
+  &.department {
+    color: $color7;
+  }
+}
+
+.search__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 200px;
+  padding-bottom: 10px;
+  padding-left: 6px;
+
+  &:hover,
+  &:focus-within {
+    border-left-color: $color6;
+  }
+}
+
+.search__input {
+  width: 200px;
+  padding-left: 5px;
+
+  color: $color1;
+
+  border: 1px solid $color9;
+  border-radius: 3px;
+
+  &::placeholder {
+    color: $color4;
+  }
+
+  &:-ms-input-placeholder {
+    padding-left: 5px;
+
+    color: $color4;
+  }
+
+  &:focus {
+    outline: 1px dashed $color6;
+  }
+}

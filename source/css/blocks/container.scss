@@ -1,0 +1,22 @@
+.container {
+  max-width: $breakpoint1;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @include respond-to (break2) {
+    max-width: $breakpoint2;
+  }
+
+  @include respond-to (break3) {
+    max-width: $breakpoint3;
+  }
+
+  @include respond-to (break4) {
+    max-width: $breakpoint4;
+  }
+
+  @include respond-to (break4) {
+    max-width: $breakpoint4;
+  }
+}

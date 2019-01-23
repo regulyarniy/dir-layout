@@ -1,0 +1,13 @@
+.department {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  padding-top: 10px;
+
+  text-shadow: 2px 2px 4px rgba($color1, 0.5);
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,47 @@
+.popup {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  width: 230px;
+  height: calc(100vh - 10px);
+  margin-top: 10px;
+  overflow: auto;
+}
+
+.popup--in {
+  animation: popupSlideIn 0.3s 0.5s ease-in-out forwards;
+}
+
+.popup--out {
+  animation: popupSlideOut 0.3s 0.5s ease-in-out forwards;
+}
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  width: 210px;
+  height: 40px;
+  padding: 0;
+
+  background-color: transparent;
+  background-image: url("../img/popup-close.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: background-position 0.3s ease-in-out;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-position: 90%;
+  }
+}
