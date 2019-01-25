@@ -5,7 +5,7 @@ export default (url, callback) => {
   }
 
   // Create new request
-  let xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
 
   // Setup callback
   xhr.onload = function () {
