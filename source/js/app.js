@@ -44,6 +44,13 @@ export default class App {
   }
 
   initializeSearch() {
+    const tooltipElement = document.createElement(`ul`);
+    tooltipElement.classList.add(`search__tooltip`);
+    const departmentTooltipBox = tooltipElement.cloneNode(true);
+    const personTooltipBox = tooltipElement.cloneNode(true);
+    this._searchDepartmentInput.parentElement.appendChild(departmentTooltipBox);
+    this._searchPersonInput.parentElement.appendChild(personTooltipBox);
+
     /**
      * Scrolls to element and adds class
      * @param {Node} element
@@ -62,17 +69,36 @@ export default class App {
      */
     const search = (inputField, elementsList) => {
       const pattern = inputField.value.toLowerCase();
+      const tooltipBox = inputField.parentElement.querySelector(`.search__tooltip`);
+      const foundMatches = [];
+      tooltipBox.innerHTML = ``;
 
       for (let i = 0; i < elementsList.length; i++) {
         if (!pattern) {
           this._searchedElement.classList.remove(`search--highlight`);
           break;
         }
-        const foundMatchIndex = elementsList[i].innerHTML.toLowerCase().indexOf(pattern);
-        if (foundMatchIndex !== -1) {
-          scrollToFoundElement(elementsList[i]);
+        const foundMatchIndex = elementsList[i].dataset.text.toLowerCase().indexOf(pattern);
+        if (foundMatchIndex !== -1 && foundMatches.length < 10) {
+          foundMatches.push(elementsList[i]);
+        } else if (foundMatches.length >= 10) {
           break;
         }
+      }
+
+      foundMatches.forEach((foundElement) => {
+        const tooltipItem = document.createElement(`li`);
+        tooltipItem.innerHTML = `<a>${foundElement.dataset.text}</a>`;
+        tooltipItem.addEventListener(`click`, (event) => {
+          event.preventDefault();
+          departmentTooltipBox.innerHTML = ``;
+          personTooltipBox.innerHTML = ``;
+          scrollToFoundElement(foundElement);
+        });
+        tooltipBox.appendChild(tooltipItem);
+      });
+      if (foundMatches[0]) {
+        scrollToFoundElement(foundMatches[0]);
       }
     };
 
@@ -160,10 +186,10 @@ export default class App {
     const stickMenu = () => {
       if (document.documentElement.scrollTop > this._menu.offsetTop) {
         this._menu.classList.add(`menu--fixed`);
-        this._body.style.marginTop = `${this._menu.scrollHeight}px`;
-        this._aside.style.marginTop = `${this._menu.scrollHeight}px`;
-        this._popup.style.height = `${window.innerHeight - this._menu.scrollHeight - 10}px`;
-        this._aside.style.height = `${window.innerHeight - this._menu.scrollHeight}px`;
+        this._body.style.marginTop = `${this._menu.clientHeight}px`;
+        this._aside.style.marginTop = `${this._menu.clientHeight}px`;
+        this._popup.style.height = `${window.innerHeight - this._menu.clientHeight - 10}px`;
+        this._aside.style.height = `${window.innerHeight - this._menu.clientHeight}px`;
         this._headerLogo.classList.remove(`visually-hidden`);
         this._asideLogo.classList.add(`visually-hidden`);
       } else {

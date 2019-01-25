@@ -21,6 +21,7 @@
   width: 200px;
   padding-bottom: 10px;
   padding-left: 6px;
+  position: relative;
 
   &:hover,
   &:focus-within {
@@ -49,5 +50,27 @@
 
   &:focus {
     outline: 1px dashed $color6;
+  }
+}
+
+.search__tooltip {
+  position: absolute;
+  top: 20px;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid $color8;
+}
+
+.search__tooltip li {
+  border-bottom: 1px solid $color8;
+  padding: 5px;
+  background-color: #ffffff;
+
+  & a {
+    width: 100%;
+    display: block;
+    cursor: pointer;
   }
 }
